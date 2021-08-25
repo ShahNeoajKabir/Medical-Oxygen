@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DXJW7AXl5zTIUyeHBUK/u1CeQBX4LyzHEexOdQVKRudeLDZfQo+6YHutU//mC5PXb8kbFT6NsiYzkgpFqnVxvA==",
+  "dgSpecHash": "x8Pf0yGoXPTq51+P20CzATCpFSRVQMLZTUM8I2IowymIjzmpcUs0eYJOoFHwKYz34zNDvRntHAGfm72ha8rFDQ==",
   "success": true,
-  "projectFilePath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj",
+  "projectFilePath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shah Neoaj Kabir\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Shah Neoaj Kabir\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

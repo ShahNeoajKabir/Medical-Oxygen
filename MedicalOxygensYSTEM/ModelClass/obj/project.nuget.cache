@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ezFzSF+pzULFXHK1uCHEM0tskuqBdqqVOT6BSOshdzZla6VQ4HYd7AexOmxHxLRwbZSxMu7RefCaPJNIpB3Gng==",
+  "dgSpecHash": "B3QSjpdBpSywWPjKLAjdjnonyz5/gL1ucc0D7mc/70uvxUaDXXr8YIoz3c9MIdnzLtMW/GePY58kpvprHGvO6A==",
   "success": true,
-  "projectFilePath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj",
+  "projectFilePath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shah Neoaj Kabir\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Shah Neoaj Kabir\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

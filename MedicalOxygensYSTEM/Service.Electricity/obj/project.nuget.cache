@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RYpotZWXlhnUf1aVrqUlcSXJzQO32UPecQ/etLbOgW0nMr1X5jRJ+4/iHSUZoE6UnjFAXQIyYJtRceWpw76N/A==",
+  "dgSpecHash": "MFiuf+pMIDUYR2A1i9i8HX3Oe8IhWWCpZlJT9I5bkJBCSUU6T7KwAgHkx19arHz+Ehv3jdrVR3dwOuMbRDL01Q==",
   "success": true,
-  "projectFilePath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Service.Electricity\\Service.Oxygen.csproj",
+  "projectFilePath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Service.Electricity\\Service.Oxygen.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shah Neoaj Kabir\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Shah Neoaj Kabir\\.nuget\\packages\\mailkit\\2.10.0\\mailkit.2.10.0.nupkg.sha512",

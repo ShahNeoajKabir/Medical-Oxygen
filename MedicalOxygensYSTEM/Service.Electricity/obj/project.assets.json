@@ -6041,11 +6041,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Service.Electricity\\Service.Oxygen.csproj",
+      "projectUniqueName": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Service.Electricity\\Service.Oxygen.csproj",
       "projectName": "Service.Oxygen",
-      "projectPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Service.Electricity\\Service.Oxygen.csproj",
+      "projectPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Service.Electricity\\Service.Oxygen.csproj",
       "packagesPath": "C:\\Users\\Shah Neoaj Kabir\\.nuget\\packages\\",
-      "outputPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Service.Electricity\\obj\\",
+      "outputPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Service.Electricity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6066,11 +6066,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Context\\Context.csproj": {
-              "projectPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Context\\Context.csproj"
+            "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Context\\Context.csproj": {
+              "projectPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Context\\Context.csproj"
             },
-            "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj": {
-              "projectPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj"
+            "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj": {
+              "projectPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj"
             }
           }
         }

@@ -66,7 +66,8 @@ namespace SecurityBLLManager.ImplementClasses
         {
             try
             {
-
+                List<Role> role = _context.Role.ToList();
+                return role;
             }
             catch (Exception)
             {
@@ -75,31 +76,104 @@ namespace SecurityBLLManager.ImplementClasses
             }
         }
         #endregion
-        public Task<bool> DeleteRole(Role role)
-        {
-            throw new NotImplementedException();
-        }
+
+        #region Get All Active Role
 
         public List<Role> GetActiveRole()
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                List<Role> role = _context.Role.Where(p => p.Status == (int)Common.Electricity.Enum.Enum.Status.Active).ToList();
+                return role;
+            }
+            catch (Exception)
+            {
 
-        public List<Role> GetAllRole()
+                throw new Exception(" ");
+            }
+        }
+        #endregion
+
+        #region Get By Id
+        public async Task<Role> GetById(Role role)
         {
-            throw new NotImplementedException();
+            var roleid =await _context.Role.Where(p => p.RoleId == role.RoleId).FirstOrDefaultAsync();
+            return roleid;
         }
 
-        public Task<Role> GetById(Role role)
+        #endregion
+
+
+        #region Delete Role
+        public async Task<bool> DeleteRole(Role role)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var checkid = _context.Role.Where(p => p.RoleId == role.RoleId).AsNoTracking().FirstOrDefaultAsync();
+                if (checkid != null)
+                {
+                    _context.Remove(role);
+                    var res = await _context.SaveChangesAsync();
+                    if (res > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    throw new Exception(" ");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
+        #endregion
 
 
-        public Task<bool> UpdateRole(Role role)
+        #region Update Role
+
+        public async Task<bool> UpdateRole(Role role)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var checkid = await _context.Role.Where(p => p.RoleId == role.RoleId).AsNoTracking().FirstOrDefaultAsync();
+                if (checkid != null)
+                {
+                    role.UpdatedBy = "Admin";
+                    role.UpdatedDate = DateTime.Now;
+                    _context.Role.Update(role);
+                    var res =await _context.SaveChangesAsync();
+                    if (res > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                else
+                {
+                    throw new Exception("Role Does not Found");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
+
+
+        #endregion
     }
 }

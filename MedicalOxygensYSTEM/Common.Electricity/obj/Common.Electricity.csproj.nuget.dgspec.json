@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj": {}
+    "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj": {}
   },
   "projects": {
-    "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj": {
+    "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj",
+        "projectUniqueName": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj",
         "projectName": "Common.Electricity",
-        "projectPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj",
+        "projectPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj",
         "packagesPath": "C:\\Users\\Shah Neoaj Kabir\\.nuget\\packages\\",
-        "outputPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Common.Electricity\\obj\\",
+        "outputPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Common.Electricity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

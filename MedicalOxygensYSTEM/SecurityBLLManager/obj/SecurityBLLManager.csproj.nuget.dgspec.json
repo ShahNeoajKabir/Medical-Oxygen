@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj": {}
+    "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj": {}
   },
   "projects": {
-    "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj": {
+    "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj",
+        "projectUniqueName": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj",
         "projectName": "Common.Electricity",
-        "projectPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj",
+        "projectPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj",
         "packagesPath": "C:\\Users\\Shah Neoaj Kabir\\.nuget\\packages\\",
-        "outputPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Common.Electricity\\obj\\",
+        "outputPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Common.Electricity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -78,14 +78,14 @@
         }
       }
     },
-    "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Context\\Context.csproj": {
+    "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Context\\Context.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Context\\Context.csproj",
+        "projectUniqueName": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Context\\Context.csproj",
         "projectName": "Context",
-        "projectPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Context\\Context.csproj",
+        "projectPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Context\\Context.csproj",
         "packagesPath": "C:\\Users\\Shah Neoaj Kabir\\.nuget\\packages\\",
-        "outputPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Context\\obj\\",
+        "outputPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Context\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -106,8 +106,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj": {
-                "projectPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj"
+              "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj": {
+                "projectPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj"
               }
             }
           }
@@ -160,14 +160,14 @@
         }
       }
     },
-    "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj": {
+    "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj",
+        "projectUniqueName": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj",
         "projectName": "ModelClass",
-        "projectPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj",
+        "projectPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj",
         "packagesPath": "C:\\Users\\Shah Neoaj Kabir\\.nuget\\packages\\",
-        "outputPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\ModelClass\\obj\\",
+        "outputPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\ModelClass\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -230,14 +230,14 @@
         }
       }
     },
-    "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj": {
+    "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj",
+        "projectUniqueName": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj",
         "projectName": "SecurityBLLManager",
-        "projectPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj",
+        "projectPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\SecurityBLLManager\\SecurityBLLManager.csproj",
         "packagesPath": "C:\\Users\\Shah Neoaj Kabir\\.nuget\\packages\\",
-        "outputPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\SecurityBLLManager\\obj\\",
+        "outputPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\SecurityBLLManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -258,11 +258,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj": {
-                "projectPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj"
+              "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj": {
+                "projectPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Common.Electricity\\Common.Electricity.csproj"
               },
-              "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Context\\Context.csproj": {
-                "projectPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\Context\\Context.csproj"
+              "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Context\\Context.csproj": {
+                "projectPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\Context\\Context.csproj"
               }
             }
           }

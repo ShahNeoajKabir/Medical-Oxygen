@@ -5803,11 +5803,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj",
+      "projectUniqueName": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj",
       "projectName": "ModelClass",
-      "projectPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj",
+      "projectPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\ModelClass\\ModelClass.csproj",
       "packagesPath": "C:\\Users\\Shah Neoaj Kabir\\.nuget\\packages\\",
-      "outputPath": "F:\\Oxygen Sytem\\Server\\MedicalOxygensYSTEM\\ModelClass\\obj\\",
+      "outputPath": "F:\\Oxygen Sytem\\Server\\Medical-Oxygen\\MedicalOxygensYSTEM\\ModelClass\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
