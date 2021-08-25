@@ -112,7 +112,7 @@ namespace SecurityBLLManager.ImplementClasses
                 var checkid = _context.Role.Where(p => p.RoleId == role.RoleId).AsNoTracking().FirstOrDefaultAsync();
                 if (checkid != null)
                 {
-                    _context.Remove(role);
+                    _context.Role.Remove(role);
                     var res = await _context.SaveChangesAsync();
                     if (res > 0)
                     {
