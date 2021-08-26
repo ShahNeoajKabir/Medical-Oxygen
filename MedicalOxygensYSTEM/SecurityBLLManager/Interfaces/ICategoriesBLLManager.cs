@@ -13,5 +13,6 @@ namespace SecurityBLLManager.Interfaces
         Task<bool> DeleteCategories(Categories categories);
         Task<Categories> GetById(Categories categories);
         List<Categories> GetAll();
+        List<Categories> GetActiveCategories();
     }
 }

@@ -100,6 +100,17 @@ namespace SecurityBLLManager.ImplementClasses
         #region GetCategories
         public List<Categories> GetAll()
         {
+            List<Categories> categories = _context.Categories.ToList();
+            return categories;
+        }
+
+        #endregion
+
+
+        #region Active Categiries
+
+        public List<Categories> GetActiveCategories()
+        {
             List<Categories> categories = _context.Categories.Where(p => p.Status == (int)Common.Electricity.Enum.Enum.Status.Active).ToList();
             return categories;
         }

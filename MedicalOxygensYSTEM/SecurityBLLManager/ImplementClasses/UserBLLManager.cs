@@ -132,10 +132,10 @@ namespace SecurityBLLManager
         {
             try
             {
-                var id = _context.User.Where(p => p.UserId == user.UserId).AsNoTracking().FirstOrDefaultAsync();
+                var id =await _context.User.Where(p => p.UserId == user.UserId).AsNoTracking().FirstOrDefaultAsync();
                 if (id != null)
                 {
-                    var checkmail = _context.User.Where(p => p.Email == user.Email).AsNoTracking().FirstOrDefaultAsync();
+                    var checkmail =await _context.User.Where(p => p.Email == user.Email).AsNoTracking().FirstOrDefaultAsync();
                     if (checkmail != null)
                     {
                         throw new Exception("Email Already Exists");
