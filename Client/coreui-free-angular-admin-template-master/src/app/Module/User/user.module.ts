@@ -1,25 +1,39 @@
-import { NgModule } from '@angular/core';
+// Angular
 import { CommonModule } from '@angular/common';
-import { AddUserComponent } from './add-user/add-user.component';
 import { FormsModule } from '@angular/forms';
-import { UserService } from '../../Services/User/user.service';
-import { UserRoutingModule } from './user-routing.module';
-import { UserListComponent } from './user-list/user-list.component';
-import { StuffListComponent } from './stuff-list/stuff-list.component';
-import { DeleteUserComponent } from './delete-user/delete-user.component';
-import { UnAssignUserComponent } from './un-assign-user/un-assign-user.component';
-import { UpdateUserComponent } from './update-user/update-user.component';
+import { NgModule } from '@angular/core';
 
+import { AddUserComponent } from './add-user/add-user.component';
+import { UserRoutingModule } from './user-routing.module';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { AllUserListComponent } from './all-user-list/all-user-list.component';
 
 
 
 @NgModule({
-  declarations: [AddUserComponent,  UserListComponent, StuffListComponent, DeleteUserComponent, UnAssignUserComponent, UpdateUserComponent ],
   imports: [
     CommonModule,
+    FormsModule,
     UserRoutingModule,
-    FormsModule
+    BsDropdownModule.forRoot(),
+    TabsModule,
+    CarouselModule.forRoot(),
+    CollapseModule.forRoot(),
+    PaginationModule.forRoot(),
+    PopoverModule.forRoot(),
+    ProgressbarModule.forRoot(),
+    TooltipModule.forRoot()
   ],
-  providers:[UserService],
+  declarations: [
+    AddUserComponent,
+    AllUserListComponent
+  ]
 })
 export class UserModule { }

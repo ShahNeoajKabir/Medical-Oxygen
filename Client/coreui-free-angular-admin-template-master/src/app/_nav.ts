@@ -11,56 +11,25 @@ export const navItems: INavData[] = [
     }
   },
   {
-    name: 'UserRole',
-    url: '/UserRole/View',
-    icon: 'icon-user-following'
-  },
+    name: 'User',
+    url: '/User',
+    icon: 'icon-user-following',
+    children:[
+      {
+        name:'AddUser',
+        url:'/User/AddUser',
+        icon:'icon-user-following',
+      },
 
-  {
-    name: 'UnAssignUser',
-    url: '/User/ViewUnAssignUser',
-    icon: 'icon-user-following'
-  },
-  {
-    name: 'Stuff List',
-    url: '/User/ViewStuff',
-    icon: 'icon-user-following'
-  },
-  {
-    name: 'Role',
-    url: '/Role/ViewRole',
-    icon: 'icon-user-following'
-  },
+      {
+        name:'ListAllUser',
+        url:'/User/ListAllUser',
+        icon:'icon-user-following',
+      },
 
-  {
-    name: 'Categories',
-    url: '/Categories/View',
-    icon: 'icon-user-following'
-  },
 
-  {
-    name: 'Post',
-    url: '/Post/View',
-    icon: 'icon-user-following'
+    ]
   },
-  {
-    title: true,
-    name: 'Theme'
-  },
-  // {
-  //   name: 'Colors',
-  //   url: '/theme/colors',
-  //   icon: 'icon-drop'
-  // },
-  // {
-  //   name: 'Typography',
-  //   url: '/theme/typography',
-  //   icon: 'icon-pencil'
-  // },
-  // {
-  //   title: true,
-  //   name: 'Components'
-  // },
   // {
   //   name: 'Base',
   //   url: '/base',

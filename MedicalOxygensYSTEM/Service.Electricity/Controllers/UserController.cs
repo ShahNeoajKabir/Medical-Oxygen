@@ -41,6 +41,13 @@ namespace Service.Oxygen.Controllers
 
 
         }
+        [HttpGet]
+        [Route("GetAll")]
+        public List<User> GetAll()
+        {
+            List<User> user = this.userBLLManager.GetAllUser();
+            return user;
+        }
         [HttpPost]
         [Route("UpdateUser")]
         public async Task<ActionResult>UpdateUser([FromBody]TempMessage message)

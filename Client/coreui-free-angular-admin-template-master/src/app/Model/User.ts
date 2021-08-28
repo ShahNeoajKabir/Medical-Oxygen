@@ -2,10 +2,9 @@ export class User{
     UserId:number;
     Image:string;
     UserName:string;
-    Age:number;
     Email:string
     Password:string;
-    MobileNo:string;
+    MobileNumber:string;
     UserType:number;
     CreatedBy:string;
     CreatedDate:Date;
@@ -22,7 +21,7 @@ export class VmUsers{
     Age:number;
     Email:string
     Password:string;
-    MobileNo:string;
+    MobileNumber:string;
     UserType:number;
     CreatedBy:string;
     CreatedDate:Date;
