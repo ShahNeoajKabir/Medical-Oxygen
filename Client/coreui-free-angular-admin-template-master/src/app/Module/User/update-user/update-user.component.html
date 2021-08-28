@@ -1,0 +1,102 @@
+<div class="app-body" >
+    <main class="main d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="card mx-4">
+              <div class="card-body p-4">
+                <form  #f="ngForm" novalidate>
+                  <h1>Update User</h1>
+                  <p class="text-muted">Update User account</p>
+                  <div class="input-group mb-3">
+                    
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"></span>
+                      </div>
+                      <input type="text" class="form-control"  [(ngModel)]="objuser.Image" name="Image" placeholder="Image"  #refImage="ngModel" id="Image" required>
+                      <div *ngIf="!refImage.valid  && (refImage.dirty || refImage.touched)" class="alert alert-danger">
+                        <div [hidden]="!refImage.errors.required">
+                                Image is required
+                        </div>
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="text" class="form-control"  [(ngModel)]="objuser.UserName" name="UserName" placeholder="UserName"  #refUserName="ngModel" id="UserName" required>
+                    <div *ngIf="!refUserName.valid  && (refUserName.dirty || refUserName.touched)" class="alert alert-danger">
+                      <div [hidden]="!refUserName.errors.required">
+                              UserName is required
+                      </div>
+                  </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-envelope-open" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="email" class="form-control"  [(ngModel)]="objuser.Email" name="Email" placeholder="Email"  #refEmail="ngModel" id="Email" required>
+                    <div *ngIf="!refEmail.valid  && (refEmail.dirty || refEmail.touched)" class="alert alert-danger">
+                      <div [hidden]="!refEmail.errors.required">
+                              Email is required
+                      </div>
+                  </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="password" class="form-control"  [(ngModel)]="objuser.Password" name="Password" placeholder="Password"  #refPassword="ngModel" id="Password" required>
+                    <div *ngIf="!refPassword.valid  && (refPassword.dirty || refPassword.touched)" class="alert alert-danger">
+                      <div [hidden]="!refPassword.errors.required">
+                        Password is required
+                      </div>
+                  </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="text" class="form-control"  [(ngModel)]="objuser.MobileNumber" name="MobileNumber" placeholder="MobileNumber"  #refMobileNumber="ngModel" id="MobileNumber" required>
+                    <div *ngIf="!refMobileNumber.valid  && (refMobileNumber.dirty || refMobileNumber.touched)" class="alert alert-danger">
+                      <div [hidden]="!refMobileNumber.errors.required">
+                        refMobile Number is required
+                      </div>
+                  </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <label class="col-md-3 col-form-label" for="select3">User Type</label>
+                    <div class="col-md-9">
+                      <select name="UserType" class="form-control"
+                      [(ngModel)]="objuser.UserType">
+                    <option *ngFor="let usertype of lstusertype"
+                    [value]="usertype.key">{{usertype.value}}</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <label class="col-md-3 col-form-label" for="select3">Status</label>
+                    <div class="col-md-9">
+                      <select name="Status" class="form-control"
+                      [(ngModel)]="objuser.Status">
+                    <option *ngFor="let status of lststatus"
+                    [value]="status.key">{{status.value}}</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="button" [disabled]="!f.form.valid" class="btn btn-success px-4" (click)="UpdateUser()">Submit</button>
+                    </div>
+                    <div class="col-6 text-right">
+                      <button type="button"  class="btn btn-primary px-4">Back</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>

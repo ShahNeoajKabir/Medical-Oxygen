@@ -48,6 +48,32 @@ namespace Service.Oxygen.Controllers
             List<User> user = this.userBLLManager.GetAllUser();
             return user;
         }
+
+        [HttpGet]
+        [Route("GetModerator")]
+        public List<User> GetModerator()
+        {
+            List<User> user = this.userBLLManager.GetModerator();
+            return user;
+        }
+
+
+        [HttpGet]
+        [Route("GetDeliveryMan")]
+        public List<User> GetDeliveryMan()
+        {
+            List<User> user = this.userBLLManager.GetDeliveryMan();
+            return user;
+        }
+
+        [HttpGet]
+        [Route("GetAllCustomer")]
+        public List<User> GetAllCustomer()
+        {
+            List<User> user = this.userBLLManager.GetAllCustomer();
+            return user;
+        }
+
         [HttpPost]
         [Route("UpdateUser")]
         public async Task<ActionResult>UpdateUser([FromBody]TempMessage message)
@@ -79,7 +105,25 @@ namespace Service.Oxygen.Controllers
                 throw;
             }
         }
-        
+
+        [HttpPost]
+        [Route("GetById")]
+
+        public async Task<ActionResult> GetById([FromBody] TempMessage message)
+        {
+            try
+            {
+                User user = JsonConvert.DeserializeObject<User>(message.Content.ToString());
+
+                return Ok(await this.userBLLManager.GetById(user));
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Sorry Please Try Again");
+            }
+        }
+
 
     }
 }

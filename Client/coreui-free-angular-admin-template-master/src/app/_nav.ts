@@ -15,15 +15,25 @@ export const navItems: INavData[] = [
     url: '/User',
     icon: 'icon-user-following',
     children:[
-      {
-        name:'AddUser',
-        url:'/User/AddUser',
-        icon:'icon-user-following',
-      },
 
       {
         name:'ListAllUser',
         url:'/User/ListAllUser',
+        icon:'icon-user-following',
+      },
+      {
+        name:'Moderator',
+        url:'/User/Moderator',
+        icon:'icon-user-following',
+      },
+      {
+        name:'DeliveryMan',
+        url:'/User/DeliveryMan',
+        icon:'icon-user-following',
+      },
+      {
+        name:'Customer',
+        url:'/User/Customer',
         icon:'icon-user-following',
       },
 

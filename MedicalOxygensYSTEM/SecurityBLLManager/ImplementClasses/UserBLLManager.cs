@@ -92,13 +92,14 @@ namespace SecurityBLLManager
         }
         #endregion
 
-        #region Get CoOrdinator
-        public List<User> GetCoOrdinator()
+        #region Get Moderator
+        public List<User> GetModerator()
         {
 
             try
             {
-                List<User> user = _context.User.Where(p => p.UserType == (int)Common.Electricity.Enum.Enum.UserType.CoOrdinator).ToList();
+                List<User> user = _context.User.Where(p => p.UserType == (int)Common.Electricity.Enum.Enum.UserType.Moderator
+                && p.Status==(int)Common.Electricity.Enum.Enum.Status.Active).ToList();
                 return user;
             }
             catch (Exception)
@@ -116,7 +117,9 @@ namespace SecurityBLLManager
         {
             try
             {
-                List<User> user = _context.User.Where(p => p.UserType == (int)Common.Electricity.Enum.Enum.UserType.DeliveryMan).ToList();
+                List<User> user = _context.User.Where(p => p.UserType == (int)Common.Electricity.Enum.Enum.UserType.DeliveryMan
+                && p.Status == (int)Common.Electricity.Enum.Enum.Status.Active
+                ).ToList();
                 return user;
             }
             catch (Exception)
@@ -126,6 +129,24 @@ namespace SecurityBLLManager
             }
         }
         #endregion
+
+        #region Get Customer
+        public List<User> GetAllCustomer()
+        {
+            try
+            {
+                List<User> user = _context.User.Where(p => p.UserType == (int)Common.Electricity.Enum.Enum.UserType.Customer
+                 && p.Status == (int)Common.Electricity.Enum.Enum.Status.Active
+                ).ToList();
+                return user;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception(" ");
+            }
+        }
+#endregion
 
         #region Update User
         public async Task<bool>UpdateUser(User user)
@@ -208,17 +229,12 @@ namespace SecurityBLLManager
         #endregion
 
         #region GetById
-        public async Task<User>GetById(int Id)
+        public async Task<User>GetById(User user)
         {
             try
             {
-                var checkid = await _context.User.Where(p => p.UserId == Id).FirstOrDefaultAsync();
-                var res = await _context.UserRole.Where(p => p.UserId == Id && p.Status == (int)Common.Electricity.Enum.Enum.Status.Active).FirstOrDefaultAsync();
-                if (res != null)
-                {
-                    checkid.Role = res.RoleId;
-                }
-                return checkid;
+                var res = await _context.User.Where(p => p.UserId == user.UserId).FirstOrDefaultAsync();
+                return res;
             }
             catch (Exception)
             {

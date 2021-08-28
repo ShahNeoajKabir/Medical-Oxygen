@@ -62,7 +62,7 @@ namespace Common.Electricity.Enum
         public enum UserType
         {
             Admin = 1,
-            CoOrdinator = 2,
+            Moderator = 2,
             DeliveryMan = 3,
             Customer = 4,
             SuperAdmin = -1

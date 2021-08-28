@@ -1,7 +1,8 @@
 export enum UserType{
     Admin=1,
     Moderator = 2,
-    User=3
+    DeliveryMan=3,
+    Customer=4
 }
 
 export enum Status{

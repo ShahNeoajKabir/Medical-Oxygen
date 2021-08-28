@@ -12,12 +12,13 @@ namespace SecurityBLLManager.Interfaces
         Task<bool> AddUser(User user);
         List<User> GetAllUser();
         List<User> GetActiveUser();
-        List<User> GetCoOrdinator();
+        List<User> GetModerator();
         List<User> GetDeliveryMan();
+        List<User> GetAllCustomer();
         Task<bool> UpdateUser(User user);
         Task<bool> DeleteUser(User user);
         Task<bool> ChangePassword(VMChangePassword vMChangePassword);
-        Task<User> GetById(int Id);
+        Task<User> GetById(User user);
 
 
     }

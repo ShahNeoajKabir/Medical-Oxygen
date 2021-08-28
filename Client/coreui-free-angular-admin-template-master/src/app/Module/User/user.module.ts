@@ -14,6 +14,11 @@ import { PopoverModule } from 'ngx-bootstrap/popover';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { AllUserListComponent } from './all-user-list/all-user-list.component';
+import { ModeratorListComponent } from './moderator-list/moderator-list.component';
+import { DeliverymanListComponent } from './deliveryman-list/deliveryman-list.component';
+import { CustomerlisComponent } from './customerlis/customerlis.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 
 
@@ -33,7 +38,12 @@ import { AllUserListComponent } from './all-user-list/all-user-list.component';
   ],
   declarations: [
     AddUserComponent,
-    AllUserListComponent
+    AllUserListComponent,
+    ModeratorListComponent,
+    DeliverymanListComponent,
+    CustomerlisComponent,
+    UpdateUserComponent,
+    DeleteUserComponent
   ]
 })
 export class UserModule { }
