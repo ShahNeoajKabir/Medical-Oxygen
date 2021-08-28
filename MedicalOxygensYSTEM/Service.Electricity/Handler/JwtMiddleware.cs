@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using ModelClass.ViewModel;
 using SecurityBLLManager;
+using SecurityBLLManager.Interfaces;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
@@ -51,7 +52,7 @@ namespace Service.Oxygen.Handler
                 var jwtToken = (JwtSecurityToken)validatedToken;
                 var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "unique_name").Value);
 
-                // attach user to context on successful jwt validation
+                //attach user to context on successful jwt validation
                 //context.Items["User"] = userService.GetByID(userId).Result;
             }
             catch

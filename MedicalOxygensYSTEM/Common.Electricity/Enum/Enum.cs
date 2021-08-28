@@ -67,19 +67,6 @@ namespace Common.Electricity.Enum
             Customer = 4,
             SuperAdmin = -1
         }
-        public enum CustomerType
-        {
-            Business = 1,
-            Economi = 2,
-            House = 3
-        }
-        public enum Religion
-        {
-            Muslim = 1,
-            Hindhu = 2,
-            Cristian = 3,
-            Budho=4
-        }
 
 
         public enum ErrorCode

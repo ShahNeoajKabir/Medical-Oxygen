@@ -44,20 +44,20 @@ namespace Service.Oxygen
                     });
             services.AddControllers();
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Connection")), ServiceLifetime.Transient);
-            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            //    .AddJwtBearer(options =>
-            //    {
-            //        options.TokenValidationParameters = new TokenValidationParameters
-            //        {
-            //            ValidateIssuer = true,
-            //            ValidateAudience = true,
-            //            ValidateLifetime = true,
-            //            ValidateIssuerSigningKey = true,
-            //            ValidIssuer = Configuration["JwtTokenSetting:Issuer"],
-            //            ValidAudience = Configuration["JwtTokenSetting:Issuer"],
-            //            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtTokenSetting:Key"]))
-            //        };
-            //    });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["JwtTokenSetting:Issuer"],
+                        ValidAudience = Configuration["JwtTokenSetting:Issuer"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtTokenSetting:Key"]))
+                    };
+                });
             services.Configure<SmtpSettings>(Configuration.GetSection("SmtpSettings"));
             services.AddSingleton<IMailer, Mailer>();
             services.AddSwaggerGen(c =>

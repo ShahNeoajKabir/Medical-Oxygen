@@ -70,3 +70,15 @@ F:\Oxygen Sytem\Server\MedicalOxygensYSTEM\Common.Electricity\obj\Debug\netcorea
 F:\Oxygen Sytem\Server\MedicalOxygensYSTEM\Common.Electricity\obj\Debug\netcoreapp3.1\Common.Electricity.dll
 F:\Oxygen Sytem\Server\MedicalOxygensYSTEM\Common.Electricity\obj\Debug\netcoreapp3.1\Common.Electricity.pdb
 F:\Oxygen Sytem\Server\MedicalOxygensYSTEM\Common.Electricity\obj\Debug\netcoreapp3.1\Common.Electricity.genruntimeconfig.cache
+F:\Oxygen Sytem\Server\Medical-Oxygen\MedicalOxygensYSTEM\Common.Electricity\bin\Debug\netcoreapp3.1\Common.Electricity.deps.json
+F:\Oxygen Sytem\Server\Medical-Oxygen\MedicalOxygensYSTEM\Common.Electricity\bin\Debug\netcoreapp3.1\Common.Electricity.runtimeconfig.json
+F:\Oxygen Sytem\Server\Medical-Oxygen\MedicalOxygensYSTEM\Common.Electricity\bin\Debug\netcoreapp3.1\Common.Electricity.runtimeconfig.dev.json
+F:\Oxygen Sytem\Server\Medical-Oxygen\MedicalOxygensYSTEM\Common.Electricity\bin\Debug\netcoreapp3.1\Common.Electricity.dll
+F:\Oxygen Sytem\Server\Medical-Oxygen\MedicalOxygensYSTEM\Common.Electricity\bin\Debug\netcoreapp3.1\Common.Electricity.pdb
+F:\Oxygen Sytem\Server\Medical-Oxygen\MedicalOxygensYSTEM\Common.Electricity\obj\Debug\netcoreapp3.1\Common.Electricity.csprojAssemblyReference.cache
+F:\Oxygen Sytem\Server\Medical-Oxygen\MedicalOxygensYSTEM\Common.Electricity\obj\Debug\netcoreapp3.1\Common.Electricity.AssemblyInfoInputs.cache
+F:\Oxygen Sytem\Server\Medical-Oxygen\MedicalOxygensYSTEM\Common.Electricity\obj\Debug\netcoreapp3.1\Common.Electricity.AssemblyInfo.cs
+F:\Oxygen Sytem\Server\Medical-Oxygen\MedicalOxygensYSTEM\Common.Electricity\obj\Debug\netcoreapp3.1\Common.Electricity.csproj.CoreCompileInputs.cache
+F:\Oxygen Sytem\Server\Medical-Oxygen\MedicalOxygensYSTEM\Common.Electricity\obj\Debug\netcoreapp3.1\Common.Electricity.dll
+F:\Oxygen Sytem\Server\Medical-Oxygen\MedicalOxygensYSTEM\Common.Electricity\obj\Debug\netcoreapp3.1\Common.Electricity.pdb
+F:\Oxygen Sytem\Server\Medical-Oxygen\MedicalOxygensYSTEM\Common.Electricity\obj\Debug\netcoreapp3.1\Common.Electricity.genruntimeconfig.cache
