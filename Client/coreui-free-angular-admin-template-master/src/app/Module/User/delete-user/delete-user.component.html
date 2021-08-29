@@ -1,1 +1,72 @@
-<p>delete-user works!</p>
+<div class="app-body" >
+    <main class="main d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="card mx-4">
+              <div class="card-body p-4">
+                <form  #f="ngForm" novalidate>
+                  <h1>Delete User</h1>
+                  <p class="text-muted">Delete User account</p>
+                  <div class="input-group mb-3">
+                    
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"></span>
+                      </div>
+                      <input type="text" class="form-control"  [(ngModel)]="objuser.Image" name="Image" placeholder="Image" disabled #refImage="ngModel" id="Image" required>
+                      <div *ngIf="!refImage.valid  && (refImage.dirty || refImage.touched)" class="alert alert-danger">
+                        <div [hidden]="!refImage.errors.required">
+                                Image is required
+                        </div>
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="text" class="form-control"  [(ngModel)]="objuser.UserName" name="UserName" placeholder="UserName" disabled  #refUserName="ngModel" id="UserName" required>
+                    <div *ngIf="!refUserName.valid  && (refUserName.dirty || refUserName.touched)" class="alert alert-danger">
+                      <div [hidden]="!refUserName.errors.required">
+                              UserName is required
+                      </div>
+                  </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-envelope-open" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="email" class="form-control"  [(ngModel)]="objuser.Email" name="Email" placeholder="Email" disabled  #refEmail="ngModel" id="Email" required>
+                    <div *ngIf="!refEmail.valid  && (refEmail.dirty || refEmail.touched)" class="alert alert-danger">
+                      <div [hidden]="!refEmail.errors.required">
+                              Email is required
+                      </div>
+                  </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="text" class="form-control" disabled [(ngModel)]="objuser.MobileNumber" name="MobileNumber" placeholder="MobileNumber"  #refMobileNumber="ngModel" id="MobileNumber" required>
+                    <div *ngIf="!refMobileNumber.valid  && (refMobileNumber.dirty || refMobileNumber.touched)" class="alert alert-danger">
+                      <div [hidden]="!refMobileNumber.errors.required">
+                        refMobile Number is required
+                      </div>
+                  </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6 ">
+                        <button type="button"  class="btn btn-primary px-4"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back</button>
+                      </div>
+                    <div class="col-6 text-right">
+                      <button type="button"  class="btn btn-success px-4" (click)="DeleteUser()">Delete</button>
+                    </div>
+                   
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>

@@ -81,7 +81,19 @@ namespace SecurityBLLManager
         {
             try
             {
-                List<User> user = _context.User.Where(p => p.Status == (int)Common.Electricity.Enum.Enum.Status.Active).ToList();
+                List<User> user = _context.User.Where(p => p.Status == (int)Common.Electricity.Enum.Enum.Status.Active ).Select(t=>new User(){
+                    UserName=t.UserName,
+                    Email=t.Email,
+                    MobileNumber=t.MobileNumber,
+                    Status=t.Status,
+                    CreatedBy=t.CreatedBy,
+                    CreatedDate=t.CreatedDate,
+                    UpdatedBy=t.UpdatedBy,
+                    UpdatedDate=t.UpdatedDate,
+                    UserType=t.UserType,
+                    Password=t.Password,
+                    Image=t.Image
+                    }).ToList();
                 return user;
             }
             catch (Exception)

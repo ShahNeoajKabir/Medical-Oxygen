@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Status, UserType } from '../../../Common/Enum';
 import { Utility } from '../../../Common/Utility';
 import { User } from '../../../Model/User';
+import { NotificationService } from '../../../Services/Notification/notification.service';
 import { UserService } from '../../../Services/User/user.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class AddUserComponent implements OnInit {
   public lstStatus:any;
   public lstusertype:any;
 
-  constructor(private userService:UserService,private router:Router, private utility:Utility, private ActivateRouter:ActivatedRoute,) { }
+  constructor(private userService:UserService,private router:Router, private utility:Utility, private ActivateRouter:ActivatedRoute,private notification:NotificationService) { }
 
   ngOnInit(): void {
     this.lstStatus=this.utility.enumToArray(Status);
@@ -25,8 +26,12 @@ export class AddUserComponent implements OnInit {
     console.log(this.objuser);
     
       this.userService.AddUser(this.objuser).subscribe(res => {
+        this.notification.showSuccess("","");
+        this.router.navigate(['/User/ListAllUser']);
         
-        console.log(res);
+      },er=>{
+        this.notification.showError("","");
+        this.router.navigate(['/User/AddUser']);
       } );
   }
 }

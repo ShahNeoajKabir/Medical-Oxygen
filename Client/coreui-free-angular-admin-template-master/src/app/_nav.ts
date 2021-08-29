@@ -7,7 +7,7 @@ export const navItems: INavData[] = [
     icon: 'icon-speedometer',
     badge: {
       variant: 'info',
-      text: 'NEW'
+      text: ''
     }
   },
   {
@@ -19,22 +19,38 @@ export const navItems: INavData[] = [
       {
         name:'ListAllUser',
         url:'/User/ListAllUser',
-        icon:'icon-user-following',
       },
       {
         name:'Moderator',
         url:'/User/Moderator',
-        icon:'icon-user-following',
       },
       {
         name:'DeliveryMan',
         url:'/User/DeliveryMan',
-        icon:'icon-user-following',
       },
       {
         name:'Customer',
         url:'/User/Customer',
-        icon:'icon-user-following',
+      },
+
+
+    ]
+  },
+  {
+    name: 'Role',
+    url: '/Role',
+    icon: 'icon-book-open',
+    children:[
+
+      {
+        name:'Active Role',
+        url:'/Role/ActiveRole',
+        icon:'icon-balance-scale',
+      },
+      {
+        name:'Deactive Role',
+        url:'/Role/DeactiveRole',
+        icon:'icon-balance-scale',
       },
 
 

@@ -30,4 +30,7 @@ url="http://localhost:54667/api/User/";
   public UpdateUser(User:any){
     return this.httpclient.post(this.url+"UpdateUser",User)
   }
+  public DeleteUser(User:any){
+    return this.httpclient.post(this.url+"DeleteUser",User)
+  }
 }

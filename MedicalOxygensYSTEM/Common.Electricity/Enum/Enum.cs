@@ -55,9 +55,7 @@ namespace Common.Electricity.Enum
         public enum Status
         {
             Active = 1,
-            Inactive = 2,
-            Delete=3,
-            Pending=4
+            Inactive = 2
         }
         public enum UserType
         {

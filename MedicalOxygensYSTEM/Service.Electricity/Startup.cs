@@ -22,6 +22,7 @@ using SecurityBLLManager;
 using Service.Oxygen.Handler;
 using Service.Electricity.MailConfig;
 using SecurityBLLManager.Interfaces;
+using SecurityBLLManager.ImplementClasses;
 
 namespace Service.Oxygen
 {
@@ -78,6 +79,8 @@ namespace Service.Oxygen
             });
             services.Configure<JwtTokenSetting>(Configuration.GetSection("JwtTokenSetting"));
             services.AddScoped<IUserBLLManager, UserBLLManager>();
+            services.AddScoped<IRoleBLLManager, RoleBLLManager>();
+            services.AddScoped<ICategoriesBLLManager, CategoriesBLLManager>();
             //services.AddScoped<IAuthenticationManager, AuthenticationManager>();
 
 

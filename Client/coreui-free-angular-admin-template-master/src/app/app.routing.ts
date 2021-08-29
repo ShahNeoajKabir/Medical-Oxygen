@@ -31,6 +31,11 @@ export const routes: Routes = [
         loadChildren:()=>import('./Module/User/user.module').then(m=>m.UserModule)
 
       },
+      {
+        path:'Role',
+        loadChildren:()=>import('./Module/Role/role.module').then(m=>m.RoleModule)
+
+      },
 
 
       {

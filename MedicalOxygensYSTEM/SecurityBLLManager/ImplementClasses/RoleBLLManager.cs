@@ -23,7 +23,7 @@ namespace SecurityBLLManager.ImplementClasses
         {
             try
             {
-                var checkrole = _context.Role.Where(p => p.RoleName == role.RoleName).FirstOrDefaultAsync();
+                var checkrole = _context.Role.Where(p => p.RoleName == role.RoleName).FirstOrDefault();
                 if (role.RoleName != null && role.Status > 0)
                 {
                     if (checkrole == null)
@@ -60,13 +60,13 @@ namespace SecurityBLLManager.ImplementClasses
 
         #endregion
 
-        #region Get All Role List
+        #region Get Deactivate Role List
 
         public List<Role> GetAllRole()
         {
             try
             {
-                List<Role> role = _context.Role.ToList();
+                List<Role> role = _context.Role.Where(p=>p.Status==(int)Common.Electricity.Enum.Enum.Status.Inactive).ToList();
                 return role;
             }
             catch (Exception)

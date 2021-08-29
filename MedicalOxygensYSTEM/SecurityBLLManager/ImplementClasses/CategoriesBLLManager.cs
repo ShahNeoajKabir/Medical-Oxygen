@@ -23,7 +23,7 @@ namespace SecurityBLLManager.ImplementClasses
         {
             try
             {
-                var check = await _context.Categories.Where(p => p.CategoriesName == categories.CategoriesName).FirstOrDefaultAsync();
+                var check = _context.Categories.Where(p => p.CategoriesName == categories.CategoriesName).FirstOrDefault();
                 if(categories.CategoriesName!=null & categories.Image != null)
                 {
                     if (check != null)
@@ -98,9 +98,9 @@ namespace SecurityBLLManager.ImplementClasses
 
 
         #region GetCategories
-        public List<Categories> GetAll()
+        public List<Categories> GetDeactiveCategories()
         {
-            List<Categories> categories = _context.Categories.ToList();
+            List<Categories> categories = _context.Categories.Where(p=>p.Status==(int)Common.Electricity.Enum.Enum.Status.Inactive).ToList();
             return categories;
         }
 

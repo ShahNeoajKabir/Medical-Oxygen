@@ -26,20 +26,20 @@
               <tr>
                   <th>User Name</th>
                   <th>Email</th>
-                  <!-- <th>Password</th> -->
+                  <th>Password</th>
                   <th>Mobile Number</th>
                   <th>Role Name</th>
                   <th>Status</th>
                   <th>Action</th>
+                  <th>Action</th>
+
               </tr>
           </thead>
           <tbody >
             <tr *ngFor="let objuser of lstuser">
                 <td >{{objuser.UserName}}</td>
                 <td>{{objuser.Email}}</td>
-                <!-- <td>{{objuser.Password}}</td> -->
                 <td>{{objuser.MobileNumber}}</td>
-                <!-- <td>{{objuser.RoleName}}</td> -->
     
                 <td ><span class="btn-default" *ngIf="objuser.UserType===1">  Admin</span>
                      <span class="btn-default" *ngIf="objuser.UserType===2">  Moderator</span>
@@ -50,6 +50,8 @@
                   <span class="btn-danger" *ngIf="objuser.Status===2"> <i class="fa fa-times" aria-hidden="true"></i> Deactived</span>
             </td>
             <td> <a class="btn btn-warning" routerLink="../{{ objuser.UserId }}/edit"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></td>
+            <td> <a class="btn btn-danger" routerLink="../{{ objuser.UserId }}/delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+
             </tr>
           </tbody>
     

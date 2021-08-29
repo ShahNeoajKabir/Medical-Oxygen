@@ -12,7 +12,7 @@ namespace SecurityBLLManager.Interfaces
         Task<bool> UpdateCategories(Categories categories);
         Task<bool> DeleteCategories(Categories categories);
         Task<Categories> GetById(Categories categories);
-        List<Categories> GetAll();
+        List<Categories> GetDeactiveCategories();
         List<Categories> GetActiveCategories();
     }
 }
