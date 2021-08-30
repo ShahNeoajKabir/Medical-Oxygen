@@ -56,6 +56,26 @@ export const navItems: INavData[] = [
 
     ]
   },
+  {
+    name: 'Categories',
+    url: '/Categories',
+    icon: 'icon-book-open',
+    children:[
+
+      {
+        name:'Active Categories',
+        url:'/Categories/ActiveCategories',
+        icon:'icon-balance-scale',
+      },
+      {
+        name:'Deactive Categories',
+        url:'/Categories/DeactiveCategories',
+        icon:'icon-balance-scale',
+      },
+
+
+    ]
+  },
   // {
   //   name: 'Base',
   //   url: '/base',

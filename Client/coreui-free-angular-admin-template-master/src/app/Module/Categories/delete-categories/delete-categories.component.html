@@ -1,0 +1,57 @@
+<div class="app-body" >
+    <main class="main d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="card mx-4">
+              <div class="card-body p-4">
+                <form  #f="ngForm" novalidate>
+                  <h1>Delete Categories For Product</h1>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-text-height" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="text" class="form-control"  [(ngModel)]="objcategories.Image" name="Image" placeholder="Image" disabled #refImage="ngModel" id="Image" required>
+                    <div *ngIf="!refImage.valid  && (refImage.dirty || refImage.touched)" class="alert alert-danger">
+                      <div [hidden]="!refImage.errors.required">
+                        Image is required
+                      </div>
+                  </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-columns" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="text" class="form-control"  [(ngModel)]="objcategories.CategoriesName" disabled name="CategoriesName" placeholder="CategoriesName"  #refCategoriesName="ngModel" id="CategoriesName" required>
+                    <div *ngIf="!refCategoriesName.valid  && (refCategoriesName.dirty || refCategoriesName.touched)" class="alert alert-danger">
+                      <div [hidden]="!refCategoriesName.errors.required">
+                        Categories Name is required
+                      </div>
+                  </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <label class="col-md-3 col-form-label" for="select3">Status</label>
+                    <div class="col-md-9">
+                      <select name="Status" class="form-control" disabled
+                      [(ngModel)]="objcategories.Status">
+                    <option *ngFor="let status of lstStatus"
+                    [value]="status.key">{{status.value}}</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6 ">
+                      <button type="button"  class="btn btn-primary px-4"[routerLink]="['/Categories/ActiveCategories']"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back</button>
+                    </div>
+                    <div class="col-6 text-right">
+                      <button type="button" [disabled]="!f.form.valid" class="btn btn-success px-4" (click)="DeleteCategories()"> Delete </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>

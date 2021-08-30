@@ -36,6 +36,11 @@ export const routes: Routes = [
         loadChildren:()=>import('./Module/Role/role.module').then(m=>m.RoleModule)
 
       },
+      {
+        path:'Categories',
+        loadChildren:()=>import('./Module/Categories/categories.module').then(m=>m.CategoriesModule)
+
+      },
 
 
       {
