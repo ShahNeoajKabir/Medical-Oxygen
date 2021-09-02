@@ -81,6 +81,10 @@ namespace Service.Oxygen
             services.AddScoped<IUserBLLManager, UserBLLManager>();
             services.AddScoped<IRoleBLLManager, RoleBLLManager>();
             services.AddScoped<ICategoriesBLLManager, CategoriesBLLManager>();
+            services.AddScoped<IBrandBLLManager, BrandBLLManager>();
+            services.AddScoped<IAttributesBLLManager, AttributeBLLManager>();
+            services.AddScoped<ITagBLLManager, TagBLLManager>();
+            services.AddScoped<IUserRoleBLLManager, UserRoleBLLManager>();
             //services.AddScoped<IAuthenticationManager, AuthenticationManager>();
 
 

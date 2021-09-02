@@ -17,7 +17,6 @@ export class ActiveRoleListComponent implements OnInit {
   ngOnInit(): void {
     this.roleservice.ActiveRole().subscribe((res:any)=>{
       this.rolelist=res;
-      console.log(res);
     })
   }
 

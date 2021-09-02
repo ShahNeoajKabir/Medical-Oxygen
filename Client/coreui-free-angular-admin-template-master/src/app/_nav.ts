@@ -76,6 +76,48 @@ export const navItems: INavData[] = [
 
     ]
   },
+  {
+    name: 'Brand',
+    url: '/Brand',
+    icon: 'icon-book-open',
+    children:[
+
+      {
+        name:'Active Brand',
+        url:'/Brand/ActiveBrand',
+        icon:'icon-balance-scale',
+      },
+      {
+        name:'Deactive Brand',
+        url:'/Brand/DeactiveBrand',
+        icon:'icon-balance-scale',
+      },
+
+
+    ]
+  },
+  {
+    name: 'Attribute',
+    url: '/Attribute',
+    icon: 'icon-book-open',
+    children:[
+
+      {
+        name:'Active Attribute',
+        url:'/Attribute/ActiveAttribute',
+        icon:'icon-balance-scale',
+      },
+      {
+        name:'Deactive Attribute',
+        url:'/Attribute/DeactiveAttribute',
+        icon:'icon-balance-scale',
+      },
+
+
+    ]
+  },
+
+  
   // {
   //   name: 'Base',
   //   url: '/base',

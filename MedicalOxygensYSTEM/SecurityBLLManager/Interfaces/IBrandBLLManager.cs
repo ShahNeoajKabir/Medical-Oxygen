@@ -12,7 +12,7 @@ namespace SecurityBLLManager.Interfaces
         Task<bool> UpdateBrand(Brand brand);
         Task<bool> DeleteBrand(Brand brand);
         Task<Brand> GetById(Brand brand);
-        List<Brand> GetAll();
+        List<Brand> GetDeactiveBrand();
         List<Brand> GetActiveBrand();
     }
 }

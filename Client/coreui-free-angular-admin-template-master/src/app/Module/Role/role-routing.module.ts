@@ -19,7 +19,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'AddRole'
+        redirectTo: 'ActiveRole'
       },
       {
         path: 'AddRole',

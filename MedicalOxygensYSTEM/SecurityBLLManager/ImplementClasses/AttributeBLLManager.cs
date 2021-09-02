@@ -103,8 +103,8 @@ namespace SecurityBLLManager.ImplementClasses
 
         #endregion
 
-        #region Get All Attribute
-        public List<Attributesss> GetAll()
+        #region Get DeactiveAttribute
+        public List<Attributesss> GetDeactiveAttribute()
         {
             List<Attributesss> attributessses = _context.Attribute.ToList();
             return attributessses;
@@ -130,15 +130,10 @@ namespace SecurityBLLManager.ImplementClasses
             try
             {
                 var checkid = await _context.Attribute.Where(p => p.AttributeId == attributesss.AttributeId).AsNoTracking().FirstOrDefaultAsync();
-                var repeatcheck = await _context.Attribute.Where(p => p.AttributeName == attributesss.AttributeName).AsNoTracking().FirstOrDefaultAsync();
                 if (checkid != null)
                 {
-                    if (repeatcheck != null)
-                    {
-                        throw new Exception(" ");
-                    }
-                    else
-                    {
+                   
+                   
                         attributesss.UpdatedBy = "CoOrdinator";
                         attributesss.UpdatedDate = DateTime.Now;
                         _context.Attribute.Update(attributesss);
@@ -151,7 +146,7 @@ namespace SecurityBLLManager.ImplementClasses
                         {
                             return false;
                         }
-                    }
+                    
                 }
                 else
                 {

@@ -103,10 +103,10 @@ namespace SecurityBLLManager.ImplementClasses
 
         #endregion
 
-        #region Get All Brand Name
-        public List<Brand> GetAll()
+        #region Get All Deactive
+        public List<Brand> GetDeactiveBrand()
         {
-            List<Brand> brand = _context.Brand.ToList();
+            List<Brand> brand = _context.Brand.Where(p=>p.Status==(int)Common.Electricity.Enum.Enum.Status.Inactive).ToList();
             return brand;
         }
 
@@ -130,15 +130,10 @@ namespace SecurityBLLManager.ImplementClasses
             try
             {
                 var checkid = await _context.Brand.Where(p => p.BrandId == brand.BrandId).AsNoTracking().FirstOrDefaultAsync();
-                var repeatcheck = await _context.Brand.Where(p => p.BrandName == brand.BrandName).AsNoTracking().FirstOrDefaultAsync();
                 if (checkid != null)
                 {
-                    if (repeatcheck != null)
-                    {
-                        throw new Exception(" ");
-                    }
-                    else
-                    {
+                    
+                    
                         brand.UpdatedBy = "CoOrdinator";
                         brand.UpdatedDate = DateTime.Now;
                         _context.Brand.Update(brand);
@@ -151,7 +146,7 @@ namespace SecurityBLLManager.ImplementClasses
                         {
                             return false;
                         }
-                    }
+                    
                 }
                 else
                 {

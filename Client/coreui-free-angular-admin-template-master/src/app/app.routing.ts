@@ -41,8 +41,18 @@ export const routes: Routes = [
         loadChildren:()=>import('./Module/Categories/categories.module').then(m=>m.CategoriesModule)
 
       },
+      {
+        path:'Brand',
+        loadChildren:()=>import('./Module/Brand/brand.module').then(m=>m.BrandModule)
 
+      },
+      {
+        path:'Attribute',
+        loadChildren:()=>import('./Module/Attributess/attribute.module').then(m=>m.AttributeModule)
 
+      },
+
+      
       {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)

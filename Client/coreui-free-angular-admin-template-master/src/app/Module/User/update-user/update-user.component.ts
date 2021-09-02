@@ -33,9 +33,7 @@ export class UpdateUserComponent implements OnInit {
       this.userservice.GetById(this.edituser).subscribe(( res: any) => {
 
         this.objuser = res;
-        console.log(res);
      });
-      console.log(this.ActivateRouter.snapshot.params['id' ] );
 
     }
   }

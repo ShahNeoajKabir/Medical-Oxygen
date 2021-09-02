@@ -12,7 +12,7 @@ namespace SecurityBLLManager.Interfaces
         Task<bool> UpdateTag(Tag tag);
         Task<bool> DeleteTag(Tag tag);
         Task<Tag> GetById(Tag tag);
-        List<Tag> GetAll();
+        List<Tag> GetDeactiveTag();
         List<Tag> GetActiveTag();
     }
 }

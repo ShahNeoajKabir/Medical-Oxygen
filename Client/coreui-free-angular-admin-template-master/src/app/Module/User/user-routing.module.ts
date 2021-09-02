@@ -21,7 +21,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'AddUser'
+        redirectTo: 'ListAllUser'
       },
       {
         path: 'AddUser',

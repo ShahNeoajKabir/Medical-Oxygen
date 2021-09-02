@@ -11,7 +11,8 @@ namespace SecurityBLLManager.Interfaces
         Task<bool> AddUserRole(UserRole userRole);
         Task<bool> UpdateUserRole(UserRole userRole);
         Task<bool> DeleteUserRole(UserRole userRole);
-        List<UserRole> GetAll();
+        List<UserRole> GetActive();
+        List<UserRole> GetDeactive();
         Task<UserRole> GetById(UserRole userRole);
     }
 }

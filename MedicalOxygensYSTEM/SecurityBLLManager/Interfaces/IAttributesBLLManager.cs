@@ -12,7 +12,7 @@ namespace SecurityBLLManager.Interfaces
         Task<bool> UpdateAttribute(Attributesss attributesss);
         Task<bool> DeleteAttribute(Attributesss attributesss);
         Task<Attributesss> GetById(Attributesss attributesss);
-        List<Attributesss> GetAll();
+        List<Attributesss> GetDeactiveAttribute();
         List<Attributesss> GetActiveAttribute();
     }
 }

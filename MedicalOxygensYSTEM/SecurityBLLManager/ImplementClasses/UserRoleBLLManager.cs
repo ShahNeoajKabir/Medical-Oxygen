@@ -86,8 +86,8 @@ namespace SecurityBLLManager.ImplementClasses
         #endregion
 
 
-        #region Get All User Role
-        public List<UserRole> GetAll()
+        #region Get Active User Role
+        public List<UserRole> GetActive()
         {
             List<UserRole> userRole = _context.UserRole.Where(p => p.Status == (int)Common.Electricity.Enum.Enum.Status.Active).Select(t => new UserRole()
             {
@@ -99,6 +99,25 @@ namespace SecurityBLLManager.ImplementClasses
                 UpdatedDate=t.UpdatedDate,
                 Status=t.Status,
                 UserRoleId=t.UserRoleId
+            }).ToList();
+
+            return userRole;
+        }
+        #endregion
+
+        #region Get Deactive User Role
+        public List<UserRole> GetDeactive()
+        {
+            List<UserRole> userRole = _context.UserRole.Where(p => p.Status == (int)Common.Electricity.Enum.Enum.Status.Inactive).Select(t => new UserRole()
+            {
+                CreatedBy = t.CreatedBy,
+                CreatedDate = t.CreatedDate,
+                User = t.User,
+                Role = t.Role,
+                UpdatedBy = t.UpdatedBy,
+                UpdatedDate = t.UpdatedDate,
+                Status = t.Status,
+                UserRoleId = t.UserRoleId
             }).ToList();
 
             return userRole;

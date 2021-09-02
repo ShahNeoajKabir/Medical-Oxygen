@@ -94,7 +94,7 @@ namespace SecurityBLLManager.ImplementClasses
         #endregion
 
 
-        #region Get Active Brand
+        #region Get Active Tag
         public List<Tag> GetActiveTag()
         {
             List<Tag> tag = _context.Tag.Where(p => p.Status == (int)Common.Electricity.Enum.Enum.Status.Active).ToList();
@@ -103,8 +103,8 @@ namespace SecurityBLLManager.ImplementClasses
 
         #endregion
 
-        #region Get All Brand Name
-        public List<Tag> GetAll()
+        #region Get DeActiveTag
+        public List<Tag> GetDeactiveTag()
         {
             List<Tag> tag = _context.Tag.ToList();
             return tag;
@@ -130,15 +130,10 @@ namespace SecurityBLLManager.ImplementClasses
             try
             {
                 var checkid = await _context.Tag.Where(p => p.TagId == tag.TagId).AsNoTracking().FirstOrDefaultAsync();
-                var repeatcheck = await _context.Tag.Where(p => p.TagName == tag.TagName).AsNoTracking().FirstOrDefaultAsync();
                 if (checkid != null)
                 {
-                    if (repeatcheck != null)
-                    {
-                        throw new Exception(" ");
-                    }
-                    else
-                    {
+                  
+                   
                         tag.UpdatedBy = "CoOrdinator";
                         tag.UpdatedDate = DateTime.Now;
                         _context.Tag.Update(tag);
@@ -151,7 +146,7 @@ namespace SecurityBLLManager.ImplementClasses
                         {
                             return false;
                         }
-                    }
+                    
                 }
                 else
                 {
