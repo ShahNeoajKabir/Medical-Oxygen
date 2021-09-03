@@ -22,7 +22,7 @@ namespace SecurityBLLManager.ImplementClasses
         {
             try
             {
-                var check = await _context.Attribute.Where(p => p.AttributeName == attributesss.AttributeName).FirstOrDefaultAsync();
+                var check = await _context.Attribute.Where(p => p.AttributeValue == attributesss.AttributeValue).FirstOrDefaultAsync();
                 if (check != null)
                 {
                     throw new Exception(" ");

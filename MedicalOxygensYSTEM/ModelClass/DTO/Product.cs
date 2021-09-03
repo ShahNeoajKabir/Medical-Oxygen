@@ -9,7 +9,6 @@ namespace ModelClass.DTO
         public int ProductId { get; set; }
         public int CategoriesId { get; set; }
         public int BrandId { get; set; }
-        public int TagId { get; set; }
         public int AttributeId { get; set; }
         public string ProductCode { get; set; }
         public string Title { get; set; }
@@ -24,7 +23,6 @@ namespace ModelClass.DTO
         public DateTime? UpdatedDate { get; set; }
         public int Status { get; set; }
         public Categories Categories { get; set; }
-        public Tag Tag { get; set; }
         public Attributesss Attribute { get; set; }
         public Brand Brand { get; set; }
         public OrderTable OrderTable { get; set; }

@@ -167,11 +167,6 @@ namespace Context
                 .WithMany(m => m.Product)
                 .HasForeignKey(f => f.CategoriesId)
                 .OnDelete(DeleteBehavior.Cascade);
-
-                entity.HasOne(o => o.Tag)
-                .WithMany(m => m.Product)
-                .HasForeignKey(f => f.TagId)
-                .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Role>(entity =>

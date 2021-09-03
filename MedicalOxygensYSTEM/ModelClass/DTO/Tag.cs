@@ -13,7 +13,6 @@ namespace ModelClass.DTO
         public string UpdatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public int Status { get; set; }
-        public ICollection<Product> Product { get; set; }
 
     }
 }

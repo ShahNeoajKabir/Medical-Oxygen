@@ -9,5 +9,7 @@ namespace SecurityBLLManager.Interfaces
     public interface IProductBLLManage
     {
         Task<bool> AddProduct(Product product);
+        List<Product> ActiveProduct();
+        List<Product> DeactiveProduct();
     }
 }

@@ -504,9 +504,6 @@ namespace Context.Migrations
                     b.Property<int>("StockQuantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("TagId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
@@ -523,8 +520,6 @@ namespace Context.Migrations
                     b.HasIndex("BrandId");
 
                     b.HasIndex("CategoriesId");
-
-                    b.HasIndex("TagId");
 
                     b.ToTable("Product");
                 });
@@ -779,19 +774,11 @@ namespace Context.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ModelClass.DTO.Tag", "Tag")
-                        .WithMany("Product")
-                        .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Attribute");
 
                     b.Navigation("Brand");
 
                     b.Navigation("Categories");
-
-                    b.Navigation("Tag");
                 });
 
             modelBuilder.Entity("ModelClass.DTO.UserRole", b =>
@@ -850,11 +837,6 @@ namespace Context.Migrations
             modelBuilder.Entity("ModelClass.DTO.Role", b =>
                 {
                     b.Navigation("UserRole");
-                });
-
-            modelBuilder.Entity("ModelClass.DTO.Tag", b =>
-                {
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ModelClass.DTO.User", b =>

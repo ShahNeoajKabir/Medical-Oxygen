@@ -116,6 +116,26 @@ export const navItems: INavData[] = [
 
     ]
   },
+  {
+    name: 'Product',
+    url: '/Product',
+    icon: 'icon-book-open',
+    children:[
+
+      {
+        name:'Active Product',
+        url:'/Product/ActiveProduct',
+        icon:'icon-balance-scale',
+      },
+      {
+        name:'Deactive Product',
+        url:'/Product/DeactiveProduct',
+        icon:'icon-balance-scale',
+      },
+
+
+    ]
+  },
 
   
   // {

@@ -51,6 +51,11 @@ export const routes: Routes = [
         loadChildren:()=>import('./Module/Attributess/attribute.module').then(m=>m.AttributeModule)
 
       },
+      {
+        path:'Product',
+        loadChildren:()=>import('./Module/Product/product.module').then(m=>m.ProductModule)
+
+      },
 
       
       {
