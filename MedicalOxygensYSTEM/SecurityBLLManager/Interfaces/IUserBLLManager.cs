@@ -18,7 +18,7 @@ namespace SecurityBLLManager.Interfaces
         Task<bool> UpdateUser(User user);
         Task<bool> DeleteUser(User user);
         Task<bool> ChangePassword(VMChangePassword vMChangePassword);
-        Task<User> GetById(User user);
+        Task<User> GetById(User  user);
 
 
     }

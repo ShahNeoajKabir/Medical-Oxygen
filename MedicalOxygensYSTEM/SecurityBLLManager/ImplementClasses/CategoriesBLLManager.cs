@@ -32,7 +32,6 @@ namespace SecurityBLLManager.ImplementClasses
                     }
                     else
                     {
-                        categories.CreatedBy = "CoOrdinator";
                         categories.CreatedDate = DateTime.Now;
                         await _context.Categories.AddAsync(categories);
                         var res = await _context.SaveChangesAsync();
@@ -137,7 +136,6 @@ namespace SecurityBLLManager.ImplementClasses
                 {
                     if(categories.CategoriesName!=null & categories.Image != null)
                     {
-                        categories.UpdatedBy = "CoOrdinator";
                         categories.UpdatedDate = DateTime.Now;
                         _context.Categories.Update(categories);
                         var res = await _context.SaveChangesAsync();

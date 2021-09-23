@@ -1,5 +1,7 @@
 ﻿using Context;
+using Microsoft.EntityFrameworkCore;
 using ModelClass.DTO;
+using ModelClass.ViewModel;
 using SecurityBLLManager.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -26,7 +28,6 @@ namespace SecurityBLLManager.ImplementClasses
                 if(product.AttributeId>0 && product.BrandId>0 && product.CategoriesId>0 && product.Description!=null && product.StockQuantity>0
                      && product.Title != null && product.RegularPrice>0)
                 {
-                    product.CreatedBy = "CoOrdinator";
                     product.CreatedDate = DateTime.Now;
                     await _context.Product.AddAsync(product);
                     var res = await _context.SaveChangesAsync();
@@ -114,7 +115,7 @@ namespace SecurityBLLManager.ImplementClasses
                     Status = t.Status,
                     StockQuantity = t.StockQuantity,
                     UpdatedBy = t.UpdatedBy,
-                    UpdatedDate = t.UpdatedDate
+                    UpdatedDate = t.UpdatedDate,
                 }).ToList();
                 return product;
             }
@@ -127,7 +128,51 @@ namespace SecurityBLLManager.ImplementClasses
 
         #endregion
 
+        public async Task<Product>GetById(Product product)
+        {
+            try
+            {
+                var productid = await _context.Product.Where(p => p.ProductId == product.ProductId).FirstOrDefaultAsync();
+                return productid;
+            }
+            catch (Exception ex)
+            {
 
+                throw;
+            }
+        }
+
+        public List<Product> ProductDetails(int productid)
+        {
+            List<Product> products = _context.Product.Where(p => p.ProductId == productid).Select(t => new Product()
+            {
+                ProductCode=t.ProductCode,
+                DiscountPrice=t.DiscountPrice,
+                RegularPrice=t.RegularPrice,
+                Brand=t.Brand,
+                BrandId=t.BrandId,
+                Categories=t.Categories,
+                CategoriesId=t.CategoriesId,
+                Attribute=t.Attribute,
+                AttributeId=t.AttributeId,
+                Title=t.Title,
+                Description=t.Description,
+                Image=t.Image,
+                StockQuantity=t.StockQuantity,
+                Status=t.Status,
+                ProductId=t.ProductId
+            }).ToList();
+
+            List<Product> products1 = new List<Product>();
+            foreach (var item in products1)
+            {
+                item.BrandName = _context.Brand.Where(p => p.BrandId == item.BrandId).FirstOrDefault().BrandName;
+                item.CategoriesName = _context.Categories.Where(p => p.CategoriesId == item.CategoriesId).FirstOrDefault().CategoriesName;
+                item.AttributeValue = _context.Attribute.Where(p => p.AttributeId == item.AttributeId).FirstOrDefault().AttributeValue;
+            }
+            return products1;
+        }
+       
 
     }
 }

@@ -28,8 +28,9 @@ namespace Service.Oxygen.Controllers
         {
             try
             {
+                var loginedUser = (User)HttpContext.Items["User"];
                 User user = JsonConvert.DeserializeObject<User>(message.Content.ToString());
-                
+                user.CreatedBy = "Tanbin";
 
                 return Ok(await this.userBLLManager.AddUser(user));
             }
@@ -80,7 +81,9 @@ namespace Service.Oxygen.Controllers
         {
             try
             {
+                var loginedUser = (User)HttpContext.Items["User"];
                 User user = JsonConvert.DeserializeObject<User>(message.Content.ToString());
+                user.UserName = "Tanbin";
                 return Ok(await this.userBLLManager.UpdateUser(user));
             }
             catch (Exception)

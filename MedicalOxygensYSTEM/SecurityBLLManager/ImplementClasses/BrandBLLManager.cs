@@ -31,7 +31,6 @@ namespace SecurityBLLManager.ImplementClasses
                 {
                     if(brand.BrandName!=null && brand.Image != null)
                     {
-                        brand.CreatedBy = "CoOrdinator";
                         brand.CreatedDate = DateTime.Now;
                         await _context.Brand.AddAsync(brand);
                         var res = await _context.SaveChangesAsync();
@@ -132,9 +131,6 @@ namespace SecurityBLLManager.ImplementClasses
                 var checkid = await _context.Brand.Where(p => p.BrandId == brand.BrandId).AsNoTracking().FirstOrDefaultAsync();
                 if (checkid != null)
                 {
-                    
-                    
-                        brand.UpdatedBy = "CoOrdinator";
                         brand.UpdatedDate = DateTime.Now;
                         _context.Brand.Update(brand);
                         var res = await _context.SaveChangesAsync();

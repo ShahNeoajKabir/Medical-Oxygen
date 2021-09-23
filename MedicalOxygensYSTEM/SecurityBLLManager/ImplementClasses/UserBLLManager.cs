@@ -33,7 +33,6 @@ namespace SecurityBLLManager
                     }
                     else
                     {
-                        user.CreatedBy = "Tanbin";
                         user.CreatedDate = DateTime.Now;
                         user.Password = new EncryptionService().Encrypt(user.Password);
                         await _context.User.AddAsync(user);
@@ -175,7 +174,6 @@ namespace SecurityBLLManager
                     }
                     else
                     {
-                        user.UpdatedBy = user.UserName;
                         user.UpdatedDate = DateTime.Now;
                         user.Password = new EncryptionService().Encrypt(user.Password);
                         _context.User.Update(user);
@@ -246,6 +244,11 @@ namespace SecurityBLLManager
             try
             {
                 var res = await _context.User.Where(p => p.UserId == user.UserId).FirstOrDefaultAsync();
+                var roleid = await _context.UserRole.Where(p => p.UserId == user.UserId && p.Status == (int)Common.Electricity.Enum.Enum.Status.Active).FirstOrDefaultAsync();
+                if (roleid != null)
+                {
+                    res.Role = roleid.RoleId;
+                }
                 return res;
             }
             catch (Exception)

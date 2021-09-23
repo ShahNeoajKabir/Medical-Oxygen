@@ -31,7 +31,6 @@ namespace SecurityBLLManager.ImplementClasses
                 {
                     if (attributesss.AttributeName != null && attributesss.AttributeValue != null)
                     {
-                        attributesss.CreatedBy = "CoOrdinator";
                         attributesss.CreatedDate = DateTime.Now;
                         await _context.Attribute.AddAsync(attributesss);
                         var res = await _context.SaveChangesAsync();
@@ -132,9 +131,6 @@ namespace SecurityBLLManager.ImplementClasses
                 var checkid = await _context.Attribute.Where(p => p.AttributeId == attributesss.AttributeId).AsNoTracking().FirstOrDefaultAsync();
                 if (checkid != null)
                 {
-                   
-                   
-                        attributesss.UpdatedBy = "CoOrdinator";
                         attributesss.UpdatedDate = DateTime.Now;
                         _context.Attribute.Update(attributesss);
                         var res = await _context.SaveChangesAsync();

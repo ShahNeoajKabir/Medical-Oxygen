@@ -28,7 +28,9 @@ namespace Service.Oxygen.Controllers
         {
             try
             {
+                var loginedUser = (User)HttpContext.Items["User"];
                 Categories categories = JsonConvert.DeserializeObject<Categories>(message.Content.ToString());
+                categories.CreatedBy = "Tanbin";
                 return Ok(await _bLLManager.AddCategories(categories));
             }
             catch (Exception)
@@ -92,7 +94,9 @@ namespace Service.Oxygen.Controllers
         {
             try
             {
+                var loginedUser = (User)HttpContext.Items["User"];
                 Categories categories = JsonConvert.DeserializeObject<Categories>(message.Content.ToString());
+                categories.UpdatedBy = "Tanbin";
                 return Ok(await _bLLManager.UpdateCategories(categories));
             }
             catch (Exception)

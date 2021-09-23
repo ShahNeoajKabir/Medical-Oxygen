@@ -80,13 +80,14 @@ namespace Service.Oxygen
             services.Configure<JwtTokenSetting>(Configuration.GetSection("JwtTokenSetting"));
             services.AddScoped<IUserBLLManager, UserBLLManager>();
             services.AddScoped<IRoleBLLManager, RoleBLLManager>();
+            services.AddScoped<ISecurityBLLmanager, SecurityBLLManage>();
             services.AddScoped<ICategoriesBLLManager, CategoriesBLLManager>();
             services.AddScoped<IBrandBLLManager, BrandBLLManager>();
             services.AddScoped<IAttributesBLLManager, AttributeBLLManager>();
             services.AddScoped<ITagBLLManager, TagBLLManager>();
             services.AddScoped<IUserRoleBLLManager, UserRoleBLLManager>();
             services.AddScoped<IProductBLLManage, ProductBLLManager>();
-            //services.AddScoped<IAuthenticationManager, AuthenticationManager>();
+            services.AddScoped<IAuthenticationManager, AuthenticationManager>();
 
 
         }

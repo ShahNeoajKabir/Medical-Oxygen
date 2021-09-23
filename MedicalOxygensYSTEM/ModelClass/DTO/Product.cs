@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace ModelClass.DTO
@@ -24,8 +25,14 @@ namespace ModelClass.DTO
         public int Status { get; set; }
         public Categories Categories { get; set; }
         public Attributesss Attribute { get; set; }
-        public Brand Brand { get; set; }
+        public  Brand Brand { get; set; }
         public OrderTable OrderTable { get; set; }
+        [NotMapped]
+        public string BrandName { get; set; }
+        [NotMapped]
+        public string CategoriesName { get; set; }
+        [NotMapped]
+        public string AttributeValue { get; set; }
     }
     public class ProductSearch
     {

@@ -27,7 +27,9 @@ namespace Service.Oxygen.Controllers
         {
             try
             {
+                var loginedUser = (User)HttpContext.Items["User"];
                 UserRole userRole = JsonConvert.DeserializeObject<UserRole>(message.Content.ToString());
+                userRole.CreatedBy = "Tanbin";
                 return Ok(await _bLLManager.AddUserRole(userRole));
             }
             catch (Exception)
@@ -76,7 +78,9 @@ namespace Service.Oxygen.Controllers
         {
             try
             {
+                var loginedUser = (User)HttpContext.Items["User"];
                 UserRole userRole = JsonConvert.DeserializeObject<UserRole>(message.Content.ToString());
+                userRole.UpdatedBy = "Tanbin";
                 return Ok(await _bLLManager.UpdateUserRole(userRole));
             }
             catch (Exception)

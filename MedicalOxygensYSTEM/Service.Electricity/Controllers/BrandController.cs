@@ -26,7 +26,9 @@ namespace Service.Oxygen.Controllers
         {
             try
             {
+                var loginedUser = (User)HttpContext.Items["User"];
                 Brand Brand = JsonConvert.DeserializeObject<Brand>(message.Content.ToString());
+                Brand.CreatedBy = "Tanbin";
                 return Ok(await _bLLManager.AddBrand(Brand));
             }
             catch (Exception)
@@ -90,7 +92,9 @@ namespace Service.Oxygen.Controllers
         {
             try
             {
+                var loginedUser = (User)HttpContext.Items["User"];
                 Brand Brand = JsonConvert.DeserializeObject<Brand>(message.Content.ToString());
+                Brand.UpdatedBy = "Tanbin";
                 return Ok(await _bLLManager.UpdateBrand(Brand));
             }
             catch (Exception)

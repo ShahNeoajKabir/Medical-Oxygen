@@ -24,7 +24,6 @@ namespace SecurityBLLManager.ImplementClasses
             {
                 if(userRole.RoleId>0 && userRole.UserId > 0)
                 {
-                    userRole.CreatedBy = "Admin";
                     userRole.CreatedDate = DateTime.Now;
                     await _context.UserRole.AddAsync(userRole);
                     var res = await _context.SaveChangesAsync();
@@ -142,7 +141,6 @@ namespace SecurityBLLManager.ImplementClasses
                 var checkid = await _context.UserRole.Where(p => p.UserRoleId == userRole.UserRoleId).AsNoTracking().FirstOrDefaultAsync();
                 if(checkid!=null && userRole.UserId > 0)
                 {
-                    userRole.UpdatedBy = "Admin";
                     userRole.UpdatedDate = DateTime.Now;
                     _context.UserRole.Update(userRole);
                     var res=await _context.SaveChangesAsync();

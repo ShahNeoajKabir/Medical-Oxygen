@@ -26,7 +26,9 @@ namespace Service.Oxygen.Controllers
         {
             try
             {
+                var loginedUser = (User)HttpContext.Items["User"];
                 Attributesss Attributesss = JsonConvert.DeserializeObject<Attributesss>(message.Content.ToString());
+                Attributesss.CreatedBy = "Tanbin";
                 return Ok(await _bLLManager.AddAttribute(Attributesss));
             }
             catch (Exception)
@@ -90,7 +92,9 @@ namespace Service.Oxygen.Controllers
         {
             try
             {
+                var loginedUser = (User)HttpContext.Items["User"];
                 Attributesss Attributesss = JsonConvert.DeserializeObject<Attributesss>(message.Content.ToString());
+                Attributesss.UpdatedBy = "Tanbin"; 
                 return Ok(await _bLLManager.UpdateAttribute(Attributesss));
             }
             catch (Exception)

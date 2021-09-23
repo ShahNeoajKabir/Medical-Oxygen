@@ -26,7 +26,9 @@ namespace Service.Oxygen.Controllers
         {
             try
             {
+                var loginedUser = (User)HttpContext.Items["User"];
                 Product product = JsonConvert.DeserializeObject<Product>(message.Content.ToString());
+                product.CreatedBy = "Tanbin";
                 return Ok(await _bLLManage.AddProduct(product));
             }
             catch (Exception)
@@ -70,6 +72,30 @@ namespace Service.Oxygen.Controllers
                 throw;
             }
 
+        }
+
+        [HttpPost]
+        [Route("GetById")]
+        public async Task<ActionResult> GetById([FromBody] TempMessage message)
+        {
+            try
+            {
+                Product product = JsonConvert.DeserializeObject<Product>(message.Content.ToString());
+                return Ok(await _bLLManage.GetById(product));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        [HttpGet]
+        [Route("ProductDetails")]
+        public List<Product> ProductDetails()
+        {
+            var product = new Product();
+            return _bLLManage.ProductDetails(product.ProductId);
         }
 
     }

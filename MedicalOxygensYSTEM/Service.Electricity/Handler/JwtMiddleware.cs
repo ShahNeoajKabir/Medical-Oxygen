@@ -53,7 +53,7 @@ namespace Service.Oxygen.Handler
                 var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "unique_name").Value);
 
                 //attach user to context on successful jwt validation
-                //context.Items["User"] = userService.GetByID(userId).Result;
+                //context.Items["User"] = userService.GetById(userId).Result;
             }
             catch
             {
