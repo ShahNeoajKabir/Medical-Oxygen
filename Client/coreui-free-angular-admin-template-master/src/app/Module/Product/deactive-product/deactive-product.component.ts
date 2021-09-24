@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../../../Model/Product';
+import { ProductService } from '../../../Services/Product/product.service';
 
 @Component({
   selector: 'app-deactive-product',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./deactive-product.component.scss']
 })
 export class DeactiveProductComponent implements OnInit {
+  public lstproduct:Product[]=new Array<Product>();
 
-  constructor() { }
+  constructor(private service:ProductService) { }
 
   ngOnInit(): void {
+    this.service.DeactiveProduct().subscribe((res:any)=>{
+      this.lstproduct=res;
+    })
   }
 
 }

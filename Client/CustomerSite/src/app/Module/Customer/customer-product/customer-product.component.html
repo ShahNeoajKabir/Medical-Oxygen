@@ -1,0 +1,27 @@
+<div class="container">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" >
+            <div class="carousel-item active">
+                <div class="card"*ngFor="let Product of lstproduct" style="margin-bottom: 10px;">
+                    <div class="path"><a>{{Product.Title}}</a> </div>
+                    <div class="row">
+                        <div class="col-md-6 text-center align-self-center"> <img routerLink="../{{ Product.ProductId }}/ProductDetails" style="cursor: pointer;" class="img-fluid" src="{{Product.Image}}"> </div>
+                        <div class="col-md-6 info">
+                            <div class="row title">
+                                <div class="col">
+                                    <h2 routerLink="../{{ Product.ProductId }}/ProductDetails"  style="cursor: pointer;"> {{Product.ProductCode}}</h2>
+                                </div>
+                            </div>
+                            <p>Price : {{Product.RegularPrice}} Taka</p> <span id="reviews" style="color: white;">Discount : {{Product.DiscountPrice}} Taka</span>
+                            
+                        </div>
+                    </div>
+                    <div class="row lower">
+                        <button type="button" routerLink="../{{ Product.ProductId }}/ProductDetails" class="btn btn-light">View Details</button>
+                        <div class="col text-right align-self-center"> <button class="btn">Add to cart</button> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

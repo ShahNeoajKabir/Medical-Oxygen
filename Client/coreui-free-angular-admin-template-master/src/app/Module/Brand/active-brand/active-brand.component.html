@@ -27,7 +27,11 @@
           </thead>
           <tbody >
             <tr *ngFor="let brand of lstbrand">
-                <td>{{brand.Image}}</td>
+              <td class="text-center">
+                <div class="avatar">
+                  <img src="{{brand.Image}}" class="img-avatar" alt="admin@bootstrapmaster.com">
+                </div>
+              </td>
                 <td>{{brand.BrandName}}</td>
                 <td ><span class="btn-success" *ngIf="brand.Status===1"> <i class="fa fa-check" aria-hidden="true"></i> Active</span>
                   <span class="btn-danger" *ngIf="brand.Status===2"> <i class="fa fa-times" aria-hidden="true"></i> Deactived</span>

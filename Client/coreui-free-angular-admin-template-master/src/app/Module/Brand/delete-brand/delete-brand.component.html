@@ -7,17 +7,7 @@
               <div class="card-body p-4">
                 <form  #f="ngForm" novalidate>
                   <h1>Brand For Product</h1>
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-text-height" aria-hidden="true"></i></span>
-                    </div>
-                    <input type="text" class="form-control"  [(ngModel)]="objbrand.Image" name="Image" placeholder="Image"  #refImage="ngModel" disabled id="Image" required>
-                    <div *ngIf="!refImage.valid  && (refImage.dirty || refImage.touched)" class="alert alert-danger">
-                      <div [hidden]="!refImage.errors.required">
-                        Image is required
-                      </div>
-                  </div>
-                  </div>
+                  
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-text-height" aria-hidden="true"></i></span>

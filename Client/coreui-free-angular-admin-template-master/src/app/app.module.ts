@@ -77,7 +77,7 @@ import { AuthService } from './Common/Auth/auth.service';
     LoginComponent,
     RegisterComponent
   ],
-  providers: [HttpClientModule,httpInterceptorProviders,
+  providers: [HttpClientModule,httpInterceptorProviders,,
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy

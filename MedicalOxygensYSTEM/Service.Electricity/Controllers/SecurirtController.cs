@@ -11,10 +11,9 @@ using System.Threading.Tasks;
 
 namespace Service.Oxygen.Controllers
 {
-    public class SecurirtController : Controller
-    {
-        //[Produces("application/json")]
-        [Route("api/Security")]
+
+    [Produces("application/json")]
+    [Route("api/Security")]
         [ApiController]
         public class SecurityController : ControllerBase
         {
@@ -27,8 +26,8 @@ namespace Service.Oxygen.Controllers
             }
 
             [HttpPost]
-            //[Route("Login")]
-            public async Task<ActionResult> Login([FromBody] TempMessage message)
+            [Route("Login")]
+            public async Task<ActionResult> Login(TempMessage message)
             {
                 VMLogin userLogin = JsonConvert.DeserializeObject<VMLogin>(message.Content);
                 var result = await this.securityBLLManager.Login(userLogin);
@@ -53,4 +52,4 @@ namespace Service.Oxygen.Controllers
 
         }
     }
-}
+

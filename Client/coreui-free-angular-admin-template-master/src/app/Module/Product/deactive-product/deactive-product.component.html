@@ -1,1 +1,67 @@
-<p>deactive-product works!</p>
+<div class="animated fadeIn">
+    <div class="col-lg-12">
+      <div class="row" style="margin-bottom: 20px; margin-top: 10px;">
+        <div class="col-md-7">
+    
+        </div>
+        <div class="col-md-4">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> List Of Deactive Product
+        </div>
+        <div class="card-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                  <th>Image</th>
+                  <th>Product Title</th>
+                  <th>Product Description</th>
+                  <th>Brand Name</th>
+                  <th>Categoriee Name</th>
+                  <th>Regular Price</th>
+                  <th>Descount Price</th>
+                  <th>Stock Quantity</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                  <th>Action</th>
+
+              </tr>
+          </thead>
+          <tbody >
+            <tr *ngFor="let product of lstproduct">
+                <td >{{product.Image}}</td>
+                <td >{{product.Title}}</td>
+                <td >{{product.Description}}</td>
+                <td >{{product.Brand.BrandName}}</td>
+                <td >{{product.Categories.CategoriesName}}</td>
+                <td >{{product.RegularPrice}}</td>
+                <td >{{product.DiscountPrice}}</td>
+                <td >{{product.StockQuantity}}</td>
+                <td ><span class="btn-success" *ngIf="product.Status===1"> <i class="fa fa-check" aria-hidden="true"></i> Active</span>
+                  <span class="btn-danger" *ngIf="product.Status===2"> <i class="fa fa-times" aria-hidden="true"></i> Deactived</span>
+            </td>
+            <td> <a class="btn btn-warning" routerLink="../{{ product.ProductId }}/edit"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></td>
+            <td> <a class="btn btn-danger" routerLink="../{{ product.ProductId }}/delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+
+            </tr>
+          </tbody>
+    
+    
+          </table>
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+            <li class="page-item active">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+    </div>

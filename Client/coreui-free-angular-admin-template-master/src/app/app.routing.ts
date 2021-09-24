@@ -14,7 +14,7 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   // { path: '', loadChildren: () => import('../app/Components/signin.module').then(m => m.SigninModule) },
-
+  { path: '', loadChildren: () => import('../app/Components/signin.module').then(m => m.SigninModule) },
   {
     path: '',
     component: DefaultLayoutComponent,
@@ -34,6 +34,11 @@ export const routes: Routes = [
       {
         path:'Role',
         loadChildren:()=>import('./Module/Role/role.module').then(m=>m.RoleModule)
+
+      },
+      {
+        path:'UserRole',
+        loadChildren:()=>import('./Module/UserRole/userrole.module').then(m=>m.UserRoleModule)
 
       },
       {

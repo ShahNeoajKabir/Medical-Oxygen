@@ -15,5 +15,6 @@ export class Product{
     UpdatedBy:string;
     UpdatedDate:Date;
     Status:number;
+    BrandName:string;
 
 }

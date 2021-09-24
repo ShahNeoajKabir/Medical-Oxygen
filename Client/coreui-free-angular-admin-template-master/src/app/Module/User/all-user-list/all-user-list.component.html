@@ -24,9 +24,9 @@
           <table class="table table-striped">
             <thead>
               <tr>
+                <th>Image</th>
                   <th>User Name</th>
                   <th>Email</th>
-                  <th>Password</th>
                   <th>Mobile Number</th>
                   <th>Role Name</th>
                   <th>Status</th>
@@ -37,6 +37,11 @@
           </thead>
           <tbody >
             <tr *ngFor="let objuser of lstuser">
+              <td class="text-center">
+                <div class="avatar">
+                  <img src="{{objuser.Image}}" class="img-avatar" alt="admin@bootstrapmaster.com">
+                </div>
+              </td>
                 <td >{{objuser.UserName}}</td>
                 <td>{{objuser.Email}}</td>
                 <td>{{objuser.MobileNumber}}</td>

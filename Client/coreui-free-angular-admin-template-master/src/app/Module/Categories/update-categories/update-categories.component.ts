@@ -19,6 +19,10 @@ export class UpdateCategoriesComponent implements OnInit {
   public lstStatus:any;
 
   public userid:any;
+  ImageBaseData:string | ArrayBuffer=null;
+  imageError: string;
+  isImageSaved: boolean;
+  cardImageBase64: string;
 
   constructor(private service:CategoriesService,private utility:Utility, private router:Router, private httpclient:HttpClient,private ActivateRouter:ActivatedRoute, private notification:NotificationService) { }
 
@@ -50,6 +54,31 @@ export class UpdateCategoriesComponent implements OnInit {
       this.notification.showError("","");
       this.router.navigate(['/Categories/ActiveCategories']);
     })
+  }
+
+  handleFileInput(files: FileList) {
+    let me = this;
+    let file = files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      console.log(reader.result);
+      me.ImageBaseData=reader.result;
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+ }
+  btnUpload(){
+    
+    if(this.ImageBaseData==null){
+      alert("Please select file");
+    }else{     
+      
+      this.objcategories.Image=this.ImageBaseData.toString();
+      
+      
+    }
   }
 
 }

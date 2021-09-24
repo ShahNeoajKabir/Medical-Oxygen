@@ -19,4 +19,7 @@ export class ProductService {
   public DeactiveProduct(){
     return this.httpclient.get(this.url+"DeactiveProduct");
   }
+  public GetById(Product:any){
+    return this.httpclient.post(this.url+"GetById",Product);
+  }
 }

@@ -8,16 +8,19 @@
                 <form  #f="ngForm" novalidate>
                   <h1>Create Categories For Product</h1>
                   <p class="text-muted">Please Provide the Information </p>
+                  
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-text-height" aria-hidden="true"></i></span>
+                      <span class="input-group-text">Image</span>
                     </div>
-                    <input type="text" class="form-control"  [(ngModel)]="objcategories.Image" name="Image" placeholder="Image"  #refImage="ngModel" id="Image" required>
-                    <div *ngIf="!refImage.valid  && (refImage.dirty || refImage.touched)" class="alert alert-danger">
-                      <div [hidden]="!refImage.errors.required">
-                        Image is required
-                      </div>
-                  </div>
+                    <div class="card-container">
+                      <input type="file" id="FUImage" name="FUImage" accept=".png, .jpg, .jpeg" (change)="handleFileInput($event.target.files)"> 
+                      <button type="button" class="btn btn-danger pull-left" (click)="btnUpload()">Upload</button> 
+                    </div>
+                    <div class="card-container">
+                      <img src="{{ImageBaseData}}" alt="Selected Image" height="200" width="200">
+                    </div>
+                
                   </div>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">

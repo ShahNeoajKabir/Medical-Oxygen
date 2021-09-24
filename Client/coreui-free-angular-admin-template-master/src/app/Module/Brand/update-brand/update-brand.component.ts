@@ -15,6 +15,10 @@ export class UpdateBrandComponent implements OnInit {
   public objbrand:Brand=new Brand();
   public editbrand:Brand=new Brand();
   public lststatus:any;
+  ImageBaseData:string | ArrayBuffer=null;
+  imageError: string;
+  isImageSaved: boolean;
+  cardImageBase64: string;
 
   constructor(private service:BrandService, private utility:Utility , private route:Router, private activeroute:ActivatedRoute ,private notification:NotificationService) { }
 
@@ -51,6 +55,31 @@ export class UpdateBrandComponent implements OnInit {
         this.route.navigate(['/Brand/DeactiveBrand']);
       }
     })
+
+  }
+  handleFileInput(files: FileList) {
+    let me = this;
+    let file = files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      console.log(reader.result);
+      me.ImageBaseData=reader.result;
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+ }
+  btnUpload(){
+    
+    if(this.ImageBaseData==null){
+      alert("Please select file");
+    }else{     
+      
+      this.objbrand.Image=this.ImageBaseData.toString();
+      
+      
+    }
 
   }
 

@@ -57,6 +57,11 @@ export const navItems: INavData[] = [
     ]
   },
   {
+    name: 'UserRole',
+    url: '/UserRole/View',
+    icon: 'icon-user-following'
+  },
+  {
     name: 'Categories',
     url: '/Categories',
     icon: 'icon-book-open',

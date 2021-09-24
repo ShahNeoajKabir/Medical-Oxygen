@@ -15,6 +15,10 @@ export class AddUserComponent implements OnInit {
   public objuser:User=new User();
   public lstStatus:any;
   public lstusertype:any;
+  ImageBaseData:string | ArrayBuffer=null;
+  imageError: string;
+  isImageSaved: boolean;
+  cardImageBase64: string;
 
   constructor(private userService:UserService,private router:Router, private utility:Utility, private ActivateRouter:ActivatedRoute,private notification:NotificationService) { }
 
@@ -33,5 +37,30 @@ export class AddUserComponent implements OnInit {
         this.notification.showError("","");
         this.router.navigate(['/User/AddUser']);
       } );
+  }
+
+  handleFileInput(files: FileList) {
+    let me = this;
+    let file = files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      console.log(reader.result);
+      me.ImageBaseData=reader.result;
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+ }
+  btnUpload(){
+    
+    if(this.ImageBaseData==null){
+      alert("Please select file");
+    }else{     
+      
+      this.objuser.Image=this.ImageBaseData.toString();
+      
+      
+    }
   }
 }

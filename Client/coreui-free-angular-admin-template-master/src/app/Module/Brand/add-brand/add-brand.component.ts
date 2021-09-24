@@ -15,6 +15,10 @@ export class AddBrandComponent implements OnInit {
   public objbrand:Brand=new Brand();
   public lstStatus:any;
 
+  ImageBaseData:string | ArrayBuffer=null;
+  imageError: string;
+  isImageSaved: boolean;
+  cardImageBase64: string;
   constructor(private service:BrandService, private utility:Utility,private route:Router,private notification:NotificationService) { }
 
   ngOnInit(): void {
@@ -38,7 +42,29 @@ export class AddBrandComponent implements OnInit {
     })
   }
 
+  handleFileInput(files: FileList) {
+    let me = this;
+    let file = files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      console.log(reader.result);
+      me.ImageBaseData=reader.result;
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+ }
+  btnUpload(){
+    
+    if(this.ImageBaseData==null){
+      alert("Please select file");
+    }else{     
+      
+      this.objbrand.Image=this.ImageBaseData.toString();
+      
+      
+    }
 
-
-
+  }
 }
