@@ -9,10 +9,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from './Common/Auth/auth.service';
 import { httpInterceptorProviders } from './Common/interceptor';
+import { AboutUsComponent } from './Module/about-us/about-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AboutUsComponent,
     
   ],
   imports: [

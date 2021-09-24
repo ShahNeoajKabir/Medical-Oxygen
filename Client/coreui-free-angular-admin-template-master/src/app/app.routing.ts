@@ -17,7 +17,7 @@ export const routes: Routes = [
   { path: '', loadChildren: () => import('../app/Components/signin.module').then(m => m.SigninModule) },
   {
     path: '',
-    component: DefaultLayoutComponent,
+    component: DefaultLayoutComponent, canActivate:[AuthGuard],
     data: {
       title: 'Home'
     },

@@ -33,7 +33,7 @@ namespace Service.Oxygen.Handler
             await _next(context);
         }
 
-        private  void attachUserToContext(HttpContext context, IUserBLLManager userService, string token)
+        private void attachUserToContext(HttpContext context, IUserBLLManager userService, string token)
         {
             try
             {
@@ -50,10 +50,10 @@ namespace Service.Oxygen.Handler
                 }, out SecurityToken validatedToken);
 
                 var jwtToken = (JwtSecurityToken)validatedToken;
-                var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "unique_name").Value);
+                var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "userid").Value);
 
-                //attach user to context on successful jwt validation
-                //context.Items["User"] = userService.GetById(userId).Result;
+                // attach user to context on successful jwt validation
+                context.Items["User"] = userService.GetById(userId).Result;
             }
             catch
             {

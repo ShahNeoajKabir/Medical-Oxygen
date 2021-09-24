@@ -30,7 +30,7 @@ namespace Service.Oxygen.Controllers
             {
                 var loginedUser = (User)HttpContext.Items["User"];
                 User user = JsonConvert.DeserializeObject<User>(message.Content.ToString());
-                user.CreatedBy = "Tanbin";
+                user.CreatedBy = loginedUser.UserName;
 
                 return Ok(await this.userBLLManager.AddUser(user));
             }
@@ -42,37 +42,76 @@ namespace Service.Oxygen.Controllers
 
 
         }
-        [HttpGet]
+        [HttpPost]
         [Route("GetAll")]
-        public List<User> GetAll()
+        public async Task<ActionResult> GetAll([FromBody] TempMessage message)
         {
-            List<User> user = this.userBLLManager.GetAllUser();
-            return user;
-        }
+            try
+            {
 
-        [HttpGet]
+                return Ok(await this.userBLLManager.GetAll());
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
+        }
+        [HttpPost]
         [Route("GetModerator")]
-        public List<User> GetModerator()
+        public async Task<ActionResult> GetModerator([FromBody] TempMessage message)
         {
-            List<User> user = this.userBLLManager.GetModerator();
-            return user;
+            try
+            {
+
+                return Ok(await this.userBLLManager.GetAllModerator());
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
         }
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("GetDeliveryMan")]
-        public List<User> GetDeliveryMan()
+        public async Task<ActionResult> GetDeliveryMan([FromBody] TempMessage message)
         {
-            List<User> user = this.userBLLManager.GetDeliveryMan();
-            return user;
+            try
+            {
+
+                return Ok(await this.userBLLManager.GetDeliveryMan());
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
         }
 
         [HttpGet]
         [Route("GetAllCustomer")]
-        public List<User> GetAllCustomer()
+        public async Task<ActionResult> GetAllCustomer([FromBody] TempMessage message)
         {
-            List<User> user = this.userBLLManager.GetAllCustomer();
-            return user;
+            try
+            {
+
+                return Ok(await this.userBLLManager.GetCustomer());
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
         }
 
         [HttpPost]
@@ -110,21 +149,45 @@ namespace Service.Oxygen.Controllers
         }
 
         [HttpPost]
-        [Route("GetById")]
-
-        public async Task<ActionResult> GetById([FromBody] TempMessage message)
+        [Route("GetbyID")]
+        public async Task<ActionResult> GetbyID([FromBody] TempMessage message)
         {
             try
             {
-                User user = JsonConvert.DeserializeObject<User>(message.Content.ToString());
+                var user = JsonConvert.DeserializeObject<int>(message.Content.ToString());
 
                 return Ok(await this.userBLLManager.GetById(user));
+
             }
             catch (Exception ex)
             {
 
-                throw new Exception("Sorry Please Try Again");
+                throw;
             }
+
+
+        }
+
+        [HttpPost]
+        [Route("Registration")]
+        public async Task<ActionResult> Registration([FromBody] TempMessage message)
+        {
+            try
+            {
+                //await _mailer.SendEmailAsync("bappyron@gmail.com", "Test", "Pending Customer");
+
+                User customer = JsonConvert.DeserializeObject<User>(message.Content.ToString());
+
+                await this.userBLLManager.AddCustomer(customer);
+                return Ok(customer);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
         }
 
 

@@ -10,15 +10,16 @@ namespace SecurityBLLManager.Interfaces
     public interface IUserBLLManager
     {
         Task<bool> AddUser(User user);
-        List<User> GetAllUser();
+        Task<List<VmUsers>> GetAll();
         List<User> GetActiveUser();
-        List<User> GetModerator();
-        List<User> GetDeliveryMan();
-        List<User> GetAllCustomer();
+        Task<List<VmUsers>> GetAllModerator();
+        Task<List<VmUsers>> GetDeliveryMan();
+        Task<List<VmUsers>> GetCustomer();
         Task<bool> UpdateUser(User user);
         Task<bool> DeleteUser(User user);
         Task<bool> ChangePassword(VMChangePassword vMChangePassword);
-        Task<User> GetById(User  user);
+        Task<User> GetById(int  user);
+        Task<User> AddCustomer(User customer);
 
 
     }

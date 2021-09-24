@@ -61,17 +61,20 @@ namespace SecurityBLLManager
         #endregion
         //All Assign and UnAssign User List
         #region ListAllUser
-        public List<User> GetAllUser()
+        public async Task<List<VmUsers>> GetAll()
         {
-            try
+            List<VmUsers> user = await _context.User.Where(p => p.Status == (int)Common.Electricity.Enum.Enum.Status.Active).Select(c => new VmUsers()
             {
-                List<User> user = _context.User.ToList();
-                return user;
-            }
-            catch (Exception)
-            {
-                throw new Exception("");
-            }
+
+                Email = c.Email,
+                MobileNo = c.MobileNumber,
+                RoleName = c.UserRole.Where(p => p.Status == 1).FirstOrDefault().Role.RoleName,
+                Status = c.Status,
+                UserId = c.UserId,
+                UserName = c.UserName
+
+            }).ToListAsync();
+            return user;
         }
         #endregion
 
@@ -104,60 +107,61 @@ namespace SecurityBLLManager
         #endregion
 
         #region Get Moderator
-        public List<User> GetModerator()
+        public async Task<List<VmUsers>> GetAllModerator()
         {
-
-            try
-            {
-                List<User> user = _context.User.Where(p => p.UserType == (int)Common.Electricity.Enum.Enum.UserType.Moderator
-                && p.Status==(int)Common.Electricity.Enum.Enum.Status.Active).ToList();
-                return user;
-            }
-            catch (Exception)
+            List<VmUsers> user = await _context.User.Where(p => p.UserType == (int)Common.Electricity.Enum.Enum.UserType.Moderator).Select(c => new VmUsers()
             {
 
-                throw new Exception(" ");
-            }
+                Email = c.Email,
+                MobileNo = c.MobileNumber,
+                RoleName = c.UserRole.Where(p => p.Status == 1).FirstOrDefault().Role.RoleName,
+                Status = c.Status,
+                UserId = c.UserId,
+                UserName = c.UserName
+
+            }).ToListAsync();
+            return user;
         }
 
         #endregion
 
         #region Get DeliveryMan
 
-        public List<User> GetDeliveryMan()
+        public async Task<List<VmUsers>> GetDeliveryMan()
         {
-            try
-            {
-                List<User> user = _context.User.Where(p => p.UserType == (int)Common.Electricity.Enum.Enum.UserType.DeliveryMan
-                && p.Status == (int)Common.Electricity.Enum.Enum.Status.Active
-                ).ToList();
-                return user;
-            }
-            catch (Exception)
+            List<VmUsers> user = await _context.User.Where(p => p.UserType == (int)Common.Electricity.Enum.Enum.UserType.DeliveryMan).Select(c => new VmUsers()
             {
 
-                throw new Exception(" ");
-            }
+                Email = c.Email,
+                MobileNo = c.MobileNumber,
+                RoleName = c.UserRole.Where(p => p.Status == 1).FirstOrDefault().Role.RoleName,
+                Status = c.Status,
+                UserId = c.UserId,
+                UserName = c.UserName
+
+            }).ToListAsync();
+            return user;
         }
+
         #endregion
 
         #region Get Customer
-        public List<User> GetAllCustomer()
+        public async Task<List<VmUsers>> GetCustomer()
         {
-            try
-            {
-                List<User> user = _context.User.Where(p => p.UserType == (int)Common.Electricity.Enum.Enum.UserType.Customer
-                 && p.Status == (int)Common.Electricity.Enum.Enum.Status.Active
-                ).ToList();
-                return user;
-            }
-            catch (Exception)
+            List<VmUsers> user = await _context.User.Where(p => p.UserType == (int)Common.Electricity.Enum.Enum.UserType.Customer).Select(c => new VmUsers()
             {
 
-                throw new Exception(" ");
-            }
+                Email = c.Email,
+                MobileNo = c.MobileNumber,
+                RoleName = c.UserRole.Where(p => p.Status == 1).FirstOrDefault().Role.RoleName,
+                Status = c.Status,
+                UserId = c.UserId,
+                UserName = c.UserName
+
+            }).ToListAsync();
+            return user;
         }
-#endregion
+        #endregion
 
         #region Update User
         public async Task<bool>UpdateUser(User user)
@@ -239,12 +243,12 @@ namespace SecurityBLLManager
         #endregion
 
         #region GetById
-        public async Task<User>GetById(User user)
+        public async Task<User>GetById(int user)
         {
             try
             {
-                var res = await _context.User.Where(p => p.UserId == user.UserId).FirstOrDefaultAsync();
-                var roleid = await _context.UserRole.Where(p => p.UserId == user.UserId && p.Status == (int)Common.Electricity.Enum.Enum.Status.Active).FirstOrDefaultAsync();
+                var res = await _context.User.Where(p => p.UserId == user).FirstOrDefaultAsync();
+                var roleid = await _context.UserRole.Where(p => p.UserId == user && p.Status == (int)Common.Electricity.Enum.Enum.Status.Active).FirstOrDefaultAsync();
                 if (roleid != null)
                 {
                     res.Role = roleid.RoleId;
@@ -304,9 +308,61 @@ namespace SecurityBLLManager
 
         #endregion
 
+
+        public async Task<User> AddCustomer(User customer)
+        {
+
+            try
+            {
+                int result = 0;
+                var uniqueemail = _context.User.Where(p => p.Email == customer.Email).FirstOrDefault();
+                if (customer.UserName != null && customer.Email != null  && customer.MobileNumber != null)
+                {
+                    if (uniqueemail != null)
+                    {
+                        throw new Exception("");
+                    }
+
+                    else
+                    {
+                        customer.Status = (int)Common.Electricity.Enum.Enum.Status.Active;
+                        customer.Image = customer.Image;
+                        customer.CreatedBy = customer.UserName;
+                        customer.UserType = (int)Common.Electricity.Enum.Enum.UserType.Customer;
+                        customer.CreatedDate = DateTime.Now;
+                        customer.Password = new EncryptionService().Encrypt(customer.Password);
+                        await _context.User.AddAsync(customer);
+                        var res = _context.SaveChanges();
+
+                        if (res == 1)
+                        {
+                            result = customer.UserId;
+                            UserRole userRole = new UserRole()
+                            {
+                                RoleId = 3,
+                                UserId = customer.UserId,
+                                CreatedBy = "CoOrdinator",
+                                CreatedDate = DateTime.Now
+                            };
+                            _context.UserRole.Add(userRole);
+                            _context.SaveChanges();
+                        }
+
+                    }
+
+                    
+
+                }
+                return customer;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Failed To Registration");
+            }
+        }
     }
 
-
-
 }
+
 

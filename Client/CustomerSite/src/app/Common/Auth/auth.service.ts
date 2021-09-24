@@ -6,18 +6,20 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { TokenService } from './token.service';
 import { VMLogin } from '../../Model/VMLogin';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-  url="http://localhost:50604/api/Security/";
+  url="http://localhost:54667/api/Security/";
 
   constructor(
     private http: HttpClient,
     private tokenService: TokenService,
-    private router: Router
+    private router: Router,
+    private toast:ToastrService
   ) { }
 
 
@@ -35,7 +37,8 @@ export class AuthService {
 
   public removeToken() {
     this.tokenService.RemoveToken();
-    this.router.navigate(['Login']);
+    this.router.navigate(['/security/Login']);
+    this.toast.error("Logout Successfull");
   }
 
   checkLogged() {

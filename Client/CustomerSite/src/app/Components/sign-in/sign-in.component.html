@@ -1,0 +1,25 @@
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="assets/4_701381325010.jpg" id="icon" alt="User Icon" />
+      <h1>Medical Oxygen</h1>
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <input type="text" [(ngModel)]="objLogin.Email" name="Email" class="fadeIn second"  placeholder="Email">
+      <input type="text"  [(ngModel)]="objLogin.Password" name="Password" placeholder="Password" class="fadeIn third"  placeholder="Password">
+      <input type="submit" (click)="Login()" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" routerLink='/security/Registration'>Registration</a>
+    </div>
+
+  </div>
+</div>

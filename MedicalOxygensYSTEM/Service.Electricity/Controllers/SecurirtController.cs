@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ModelClass.DTO;
 using ModelClass.ViewModel;
 using Newtonsoft.Json;
 using SecurityBLLManager.ImplementClasses;
@@ -44,7 +45,9 @@ namespace Service.Oxygen.Controllers
 
 
             }
-            [HttpGet("Gets")]
+
+       
+        [HttpGet("Gets")]
             public string Gets()
             {
                 return "Hello";

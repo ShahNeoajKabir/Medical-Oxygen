@@ -28,4 +28,16 @@ namespace ModelClass.DTO
     {
         public string Search { get; set; }
     }
+
+    public class VmUsers
+    {
+        public int UserId { get; set; }
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string MobileNo { get; set; }
+        public string RoleName { get; set; }
+        public int Status { get; set; }
+
+    }
 }
+

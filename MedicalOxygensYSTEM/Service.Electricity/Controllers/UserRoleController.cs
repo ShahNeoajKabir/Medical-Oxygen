@@ -29,7 +29,7 @@ namespace Service.Oxygen.Controllers
             {
                 var loginedUser = (User)HttpContext.Items["User"];
                 UserRole userRole = JsonConvert.DeserializeObject<UserRole>(message.Content.ToString());
-                userRole.CreatedBy = "Tanbin";
+                userRole.CreatedBy = loginedUser.UserName;
                 return Ok(await _bLLManager.AddUserRole(userRole));
             }
             catch (Exception)
